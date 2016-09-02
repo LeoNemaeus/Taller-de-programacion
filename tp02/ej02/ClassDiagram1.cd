@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ejercicio2.Cuentas">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAAAACAIAAABAAAAAAIAIAAAAAAAABA=</HashCode>
+      <FileName>Cuentas.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ejercicio2.Cuenta">
+    <Position X="3" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAIAAAAAACw=</HashCode>
+      <FileName>Cuenta.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ejercicio2.Cliente">
+    <Position X="6.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAIAAAAAgAAAAAAABAACAAAAIAAAAAA=</HashCode>
+      <FileName>Cliente.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="ejercicio2.TipoDocumento">
+    <Position X="6.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgACAAAAAAAAAAUEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TipoDocumento.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
