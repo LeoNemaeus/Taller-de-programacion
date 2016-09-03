@@ -4,19 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ejercicio1
+namespace ej01
 {
     class FachadaFiguras
     {
         public double CalcularÁreaCírculo(double pX, double pY, double pRadio)
         {
-            Círculo mCírculo = new ejercicio1.Círculo(pX, pY, pRadio);
+            Círculo mCírculo = new ej01.Círculo(pX, pY, pRadio);
             return mCírculo.Área;
         }
         public double CalcularPerímetroCírculo(double pX, double pY,
                                                double pRadio)
         {
-            Círculo mCírculo = new ejercicio1.Círculo(pX, pY, pRadio);
+            Círculo mCírculo = new ej01.Círculo(pX, pY, pRadio);
             return mCírculo.Perímetro;
         }
         public double CalcularÁreaTriángulo(double pX1, double pY1,

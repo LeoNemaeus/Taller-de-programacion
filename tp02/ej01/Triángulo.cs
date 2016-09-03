@@ -4,7 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ejercicio1
+
+namespace ej01
 {
     // clase triangulo
     class Triángulo

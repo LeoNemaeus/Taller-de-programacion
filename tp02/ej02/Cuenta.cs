@@ -13,7 +13,7 @@ using System.Text;
  *           saldo suficiente o que el acuerdo de descubierto cubra el monto.
  */
 
-namespace ejercicio2
+namespace ej02
 {
     public class Cuenta
     {
@@ -21,10 +21,7 @@ namespace ejercicio2
         private double iAcuerdo;
 
         //Constructor con acuerdo
-        public Cuenta(double pAcuerdo)
-        {
-            this.iAcuerdo = pAcuerdo;
-        }
+        public Cuenta(double pAcuerdo) : this (pAcuerdo, 0) { }
 
         //Constructor con saldo inicial y acuerdo
         public Cuenta(double pAcuerdo, double pSaldoInicial)
@@ -53,24 +50,20 @@ namespace ejercicio2
             {
                 return this.iAcuerdo;
             }
-
-            set
-            {
-            }
         }
 
         public void AcreditarSaldo(double pSaldo)
         {
-            this.iSaldo += pSaldo;
+            iSaldo += pSaldo;
         }
 
         public bool DebitarSaldo(double pSaldo)
         {
              //Verifica que el saldo en la cuenta sea mayor o igual que el que se va a
              //extraer o bien que el saldo no alcance, pero el acuerdo cubra el debito
-            if ((this.iSaldo >= pSaldo) || (this.iSaldo < pSaldo) & (this.iAcuerdo >= pSaldo))
+            if ((this.iAcuerdo + this.iSaldo) >= pSaldo)
             {
-                this.iSaldo -= pSaldo;
+                iSaldo -= pSaldo;
                 return true;
             } else
             {
