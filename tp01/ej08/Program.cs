@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+/*
+ *  desarrolle una aplicacion que imprima por pantalla los 50 primeros terminos
+ *  de la sucesion de fiboanacci
+ */
 namespace ejercicio8
 {
     class Program
