@@ -7,22 +7,22 @@
       <FileName>Cuentas.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ejercicio2.Cuenta">
-    <Position X="3" Y="4" Width="1.5" />
+  <Class Name="ej02.Cuenta">
+    <Position X="0.5" Y="1.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>CAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAIAAAAAACw=</HashCode>
       <FileName>Cuenta.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ejercicio2.Cliente">
+  <Class Name="ej02.Cliente">
     <Position X="6.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAQAIAAAAAgAAAAAAABAACAAAAIAAAAAA=</HashCode>
       <FileName>Cliente.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Enum Name="ejercicio2.TipoDocumento">
-    <Position X="6.25" Y="4" Width="1.5" />
+  <Enum Name="ej02.TipoDocumento">
+    <Position X="4" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAgACAAAAAAAAAAUEAAAAAAAAAAAAAAA=</HashCode>
       <FileName>TipoDocumento.cs</FileName>
