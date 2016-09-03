@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ejercicio1
+
+namespace ej01
 {
     class Triángulo
     {
-        Punto iPunto1, iPunto2, iPunto3;
+        private Punto iPunto1, iPunto2, iPunto3;
 
         public Triángulo(Punto pPunto1, Punto pPunto2, Punto pPunto3)
         {

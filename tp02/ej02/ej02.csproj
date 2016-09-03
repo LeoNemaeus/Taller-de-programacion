@@ -7,8 +7,8 @@
     <ProjectGuid>{BD5ED147-77FB-46CE-B628-3B0E1AC9DF98}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ejercicio2</RootNamespace>
-    <AssemblyName>ejercicio2</AssemblyName>
+    <RootNamespace>ej02</RootNamespace>
+    <AssemblyName>ej02</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -48,12 +48,14 @@
     <Compile Include="Cuentas.cs" />
     <Compile Include="FachadaBanco.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TipoDocumento.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="ClassDiagram1.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

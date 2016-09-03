@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ejercicio1
+namespace ej01
 {
     class Círculo
     {
@@ -19,7 +19,7 @@ namespace ejercicio1
 
         public Círculo(double pX, double pY, double pRadio)
         {
-            iCentro = new ejercicio1.Punto(pX, pY);
+            iCentro = new ej01.Punto(pX, pY);
             iRadio = pRadio;
         }
 

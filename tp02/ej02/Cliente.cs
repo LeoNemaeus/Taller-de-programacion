@@ -6,7 +6,7 @@ using System.Text;
 /*
  * Clase Cliente: representa un cliente al que pertenecen las cuentas.
  */
-namespace ejercicio2
+namespace ej02
 {
     public class Cliente
     {
