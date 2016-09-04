@@ -33,8 +33,7 @@ namespace ej03
                         break;
                     case 2:
                         configurarIntentos();
-                        //Console.Write("ingrese los intentos deseados: ");
-                        //Fachada.configurarIntentos(Int32.Parse(Console.ReadLine()));
+                        
                         break;
                     case 3:
                         imprimirTop5();
@@ -46,17 +45,19 @@ namespace ej03
         // hacer
         private static void imprimirTop5()
         {
-            throw new NotImplementedException();
+            // imprimir
         }
 
         private static void configurarIntentos()
         {
-            throw new NotImplementedException();
+            Console.Write("Ingrese los intentos deseados: ");
+            Fachada.configurarIntentos(Int32.Parse(Console.ReadLine()));
         }
 
         private static void nuevaPartida()
         {
-            throw new NotImplementedException();
+            Console.Write("Para comenzar ingrese su nombre: ");
+            Fachada.nuevaPartida(Console.ReadLine());
         }
     }
 }

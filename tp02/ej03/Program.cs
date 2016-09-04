@@ -10,7 +10,7 @@ namespace ej03
     {
         static void Main(string[] args)
         {
-            
+            GUI.iniciar();
         }
     }
 }

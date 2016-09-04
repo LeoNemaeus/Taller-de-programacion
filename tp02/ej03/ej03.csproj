@@ -43,8 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Fachada.cs" />
     <Compile Include="GUI.cs" />
     <Compile Include="Partida.cs" />
+    <Compile Include="PartidaActual.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -8,13 +8,6 @@ namespace ej03
 {
     class Partida
     {
-        private static DateTime fechaInicioActual;
-        private static DateTime fechaFinActual;
-        private static string nombreJugadorActual;
-        private static int intentosActuales;
-        private static string palabraActual;
-        private static bool resultadoActual;
-
         private DateTime fechaInicio;
         private DateTime fechaFin;
         private string nombreJugador;
@@ -24,18 +17,23 @@ namespace ej03
 
         private Partida()
         {
-            this.fechaInicio = fechaInicioActual;
-            this.fechaFin = fechaFinActual;
-            this.nombreJugador = nombreJugadorActual;
-            this.palabra = palabraActual;
-            this.intentos = intentosActuales;
-            this.resultado = resultadoActual;
+            /*this.fechaInicio
+            this.fechaFin
+            this.nombreJugador
+            this.palabra
+            this.intentos
+            this.resultado*/
         }
 
         public void nuevaPartida(int pIntentos)
         {
-            intentosActuales = pIntentos;
+            //intentosActuales = pIntentos;
 
+        }
+
+        public void configurarIntentos(int pIntentos)
+        {
+            //intentosActuales = pIntentos;
         }
     }
 }
