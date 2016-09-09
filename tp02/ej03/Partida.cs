@@ -11,29 +11,20 @@ namespace ej03
         private DateTime fechaInicio;
         private DateTime fechaFin;
         private string nombreJugador;
-        private int intentos;
         private string palabra;
         private bool resultado = false;
 
-        private Partida()
+        private static List<Partida> listaPartidas = new List<Partida>();
+        
+        public Partida(DateTime pFI, DateTime pFF, string pNombre, string pPalabra, bool pResultado)
         {
-            /*this.fechaInicio
-            this.fechaFin
-            this.nombreJugador
-            this.palabra
-            this.intentos
-            this.resultado*/
-        }
+            fechaInicio = pFI;
+            fechaFin = pFF;
+            nombreJugador = pNombre;
+            palabra = pPalabra;
+            resultado = pResultado;
 
-        public void nuevaPartida(int pIntentos)
-        {
-            //intentosActuales = pIntentos;
-
-        }
-
-        public void configurarIntentos(int pIntentos)
-        {
-            //intentosActuales = pIntentos;
+            listaPartidas.Add(this);
         }
     }
 }
