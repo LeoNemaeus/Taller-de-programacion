@@ -13,31 +13,48 @@ namespace ej03
         private static string nombreJugadorActual;
         private static int intentosActuales;
         private static string palabraActual;
-        private static bool resultadoActual; // 0 perder, 1 ganar
+        private static bool resultadoActual =false; // 0 perder, 1 ganar
 
-        // TODO: hacer el aleatorio y el string
         private static void nuevaPalabra()
         {
-            palabraActual = "asado";
+            string[] palabras =
+            {
+                "TATO", "PATRIARCADO", "DARKS", "PYTHON", "BULBASAUR",
+                "PENTAKILL", "INICIATIVA", "YGGDRASIL", "KATARINA", "IRACUNDO",
+                "CONDENSADOR", "DILDO", "LICUADO", "TESERACTO", "JASPE",
+                "POLONIA", "CINNAMON", "KILOBYTE", "IBUEVANOL", "ARENA",
+                "TROLL", "MUFFIN", "STRIPPER", "SEMICORCHEA", "ELOCUENCIA",
+                "GARRAPIÑADA", "LGBT", "VELOCIRAPTOR", "YOUTUBER", "MONTICULO"
+            };
+            palabraActual = palabras[new Random().Next(0, 30)];
         }
 
-        public Partida iniciarPartida(string pNombreJugador, int pIntentos)
+        public static void iniciarPartida(string pNombreJugador, int pIntentos)
         {
             nuevaPalabra();
             nombreJugadorActual = pNombreJugador;
             intentosActuales = pIntentos;
             fechaInicioActual = DateTime.Now;
-            // TODO: hacer aqui el juego en si
+            // TODO: hacer aqui el juego en si, resultado false?
 
             fechaFinActual = DateTime.Now;
 
             guardarPartida();
-            return new Partida();
         }
 
-        private void guardarPartida()
+        private static void guardarPartida()
         {
-            // TODO: guardar partidas
+            new Partida(fechaInicioActual, 
+                fechaFinActual, 
+                nombreJugadorActual, 
+                palabraActual, 
+                resultadoActual);
         }
+
+        public static int Intentos
+        {
+            get { return intentosActuales; }
+        }
+
     }
 }

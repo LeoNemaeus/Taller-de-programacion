@@ -16,15 +16,16 @@ namespace ej03
         {
             Console.WriteLine("--------------------------------------------------");
             Console.WriteLine("-------------------{ Ahorcado }-------------------");
-            Console.WriteLine("--------------------------------------------------");
+            do
+            {
+                Console.WriteLine("--------------------------------------------------");
             Console.WriteLine("");
             Console.WriteLine("1- Nueva partida.");
             Console.WriteLine("2- Configurar numero de fallos.");
             Console.WriteLine("3- TOP 5!");
             Console.WriteLine("0- Salir.");
             opcion = Int32.Parse(Console.ReadLine());
-            do
-            {
+            
                 switch (opcion)
                 {
                     case 0: break;
@@ -42,10 +43,11 @@ namespace ej03
             } while (opcion != 0);
         }
 
-        // hacer
+
         private static void imprimirTop5()
         {
-            // imprimir
+            Fachada.top5();
+            // TODO: hacer top 5 mostrar
         }
 
         private static void configurarIntentos()

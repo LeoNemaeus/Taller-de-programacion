@@ -12,19 +12,22 @@ namespace ej03
         private DateTime fechaFin;
         private string nombreJugador;
         private string palabra;
-        private bool resultado = false;
+        private bool resultado;
+        private double duracion;
 
         private static List<Partida> listaPartidas = new List<Partida>();
         
         public Partida(DateTime pFI, DateTime pFF, string pNombre, string pPalabra, bool pResultado)
         {
-            fechaInicio = pFI;
-            fechaFin = pFF;
-            nombreJugador = pNombre;
-            palabra = pPalabra;
-            resultado = pResultado;
-
+            this.fechaInicio = pFI;
+            this.fechaFin = pFF;
+            this.nombreJugador = pNombre;
+            this.palabra = pPalabra;
+            this.resultado = pResultado;
+            TimeSpan duracionTS = pFF.Subtract(pFI); ;
+            this.duracion = duracionTS.TotalMilliseconds;
             listaPartidas.Add(this);
+            listaPartidas.Sort((x, y) => x.duracion.CompareTo(y.duracion));
         }
     }
 }
