@@ -54,6 +54,7 @@ namespace ej03
         public static int Intentos
         {
             get { return intentosActuales; }
+            set { intentosActuales = Intentos; }
         }
 
     }

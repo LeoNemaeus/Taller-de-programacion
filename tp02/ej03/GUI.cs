@@ -19,13 +19,13 @@ namespace ej03
             do
             {
                 Console.WriteLine("--------------------------------------------------");
-            Console.WriteLine("");
-            Console.WriteLine("1- Nueva partida.");
-            Console.WriteLine("2- Configurar numero de fallos.");
-            Console.WriteLine("3- TOP 5!");
-            Console.WriteLine("0- Salir.");
-            opcion = Int32.Parse(Console.ReadLine());
-            
+                Console.WriteLine("");
+                Console.WriteLine("1- Nueva partida.");
+                Console.WriteLine("2- Configurar numero de fallos.");
+                Console.WriteLine("3- TOP 5!");
+                Console.WriteLine("0- Salir.");
+                Console.Write(">>> ");
+                opcion = Int32.Parse(Console.ReadLine());
                 switch (opcion)
                 {
                     case 0: break;
@@ -34,20 +34,28 @@ namespace ej03
                         break;
                     case 2:
                         configurarIntentos();
-                        
                         break;
                     case 3:
                         imprimirTop5();
                         break;
-                }
+                } // fin switch
             } while (opcion != 0);
-        }
+        } // fin iniciar
 
 
         private static void imprimirTop5()
         {
-            Fachada.top5();
-            // TODO: hacer top 5 mostrar
+            Console.WriteLine("--------------------------------------------------");
+            Console.WriteLine("--------------------{ TOP  5 }--------------------");
+            Console.WriteLine("--------------------------------------------------");
+            List<PartidaMuestra> top5 = Fachada.top5();
+            for (int i=0; i<=4; i++)
+            {
+                Console.WriteLine("");
+                Console.WriteLine("                 ---{ TOP  "+(i+1)+" }---");
+                Console.WriteLine("Nombre Jugador: "+top5[i].NombreJugador+ "\t\t" + top5[i].Palabra);
+                Console.WriteLine("Fecha:"+top5[i].FechaInicio + "\t\t("+top5[i].Duracion+"ms)");
+            }
         }
 
         private static void configurarIntentos()
