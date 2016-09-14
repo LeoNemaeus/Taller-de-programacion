@@ -68,6 +68,38 @@ namespace ej03
         {
             Console.Write("Para comenzar ingrese su nombre: ");
             Fachada.nuevaPartida(Console.ReadLine());
+            do
+            {
+                
+                string p = Fachada.PalabraEnCurso;
+                for (int i=0; i<p.Length; i++)
+                {
+                    Console.Write("  " + p[i]);
+                }
+                Console.WriteLine("Letras Acertadas:\t" + Fachada.LetrasAcertadas);
+                Console.WriteLine("Letras Intentadas:\t" + Fachada.LetrasIntentadas);
+                Console.WriteLine("---------------------------------");
+                
+                Console.Write("\tIngrese proxima letra:");
+                Fachada.verificarLetra(Console.ReadLine().First());
+            }
+            while (Fachada.PartidaEnCurso()==true);
+            Console.WriteLine("\n");            
+        }
+        private static string estadoPalabra()
+        {//TODO: reemplazar esta mierda
+            string salida = "";
+            string palabra = Fachada.PalabraActual;
+            List<char> letrasIntentadas = Fachada.LetrasIntentadas;
+            foreach (char L in palabra)
+            {
+                if (letrasIntentadas.Contains(L))
+                {
+                    salida += L+" ";
+                }
+                else { salida += "_ "; }
+            }
+            return salida;
         }
     }
 }

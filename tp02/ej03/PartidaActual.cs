@@ -13,8 +13,30 @@ namespace ej03
         private static string nombreJugadorActual;
         private static int intentosActuales;
         private static string palabraActual;
+        private static string palabraEnCurso;
+        private static List<char> letrasIntentadas = new List<char>();
+        private static List<char> letrasAcertadas = new List<char>();
         private static bool resultadoActual =false; // 0 perder, 1 ganar
+        private static bool partidaEnCurso = false;
 
+
+        public static string PalabraActual 
+        {
+            get { return palabraActual; }
+        }
+        public static string PalabraEnCurso
+        {
+            get { return palabraEnCurso; }
+            set { palabraEnCurso = PalabraEnCurso; }
+        }
+        public static List<char> LetrasIntentadas
+        {
+            get { return letrasIntentadas; }
+        }
+        public static List<char> LetrasAcertadas
+        {
+            get { return letrasAcertadas; }
+        }
         private static void nuevaPalabra()
         {
             string[] palabras =
@@ -27,18 +49,71 @@ namespace ej03
                 "GARRAPIÑADA", "LGBT", "VELOCIRAPTOR", "YOUTUBER", "MONTICULO"
             };
             palabraActual = palabras[new Random().Next(0, 30)];
+            palabraEnCurso = "";
+            for (int i=1; i<=palabraActual.Length; i++)
+            {
+                palabraEnCurso += "_";
+            }
         }
 
+        public static bool PartidaEnCurso()
+        {
+            return partidaEnCurso;
+        }
+        public static void PartidaEnCurso(bool valor)
+        {
+            partidaEnCurso = valor;
+        }
+        public static void verificarLetra(char unaLetra)
+        {
+            bool fallo = false;
+            for (int i=0; i<(palabraActual.Length); i++)
+            {
+                if (palabraActual[i]==unaLetra)
+                {
+                    string prefijo="", sufijo = "";
+                    letrasAcertadas.Add(unaLetra);
+                    
+                    for (int j=0; j<i; j++)
+                    {
+                        prefijo += palabraActual[j];
+                    }
+                    for (int k = i+1; k < palabraActual.Length; k++)
+                    {
+                        sufijo += palabraActual[k];
+                    }
+                    palabraEnCurso = prefijo + palabraActual[i] + sufijo;
+                }
+                else
+                {
+                    fallo = true;
+                }
+                if (fallo)
+                {
+                    intentosActuales--;
+                }
+            }
+        }
         public static void iniciarPartida(string pNombreJugador, int pIntentos)
         {
             nuevaPalabra();
             nombreJugadorActual = pNombreJugador;
             intentosActuales = pIntentos;
+            partidaEnCurso = true;
             fechaInicioActual = DateTime.Now;
-            // TODO: hacer aqui el juego en si, resultado false?
-
+            letrasIntentadas = new List<char>();
+            letrasAcertadas = new List<char>();
+            // TODO: hacer aqui el juego en si
+            /*
             fechaFinActual = DateTime.Now;
 
+            guardarPartida();*/
+        }
+        public static void finalizarPartida(bool pResultado)
+        {
+            fechaFinActual = DateTime.Now;
+            partidaEnCurso = false;
+            resultadoActual = pResultado;
             guardarPartida();
         }
 
