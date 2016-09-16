@@ -6,11 +6,15 @@ using System.Threading.Tasks;
 
 namespace ej03
 {
+    /// <summary cref="GUI">
+    /// <para>Esta clase es la interfaz de consola con la que el usuario interactúa.</para>
+    /// <para>Tiene todos los métodos de impresión.</para>
+    /// </summary>
     class GUI
     {
         private static int opcion;
 
-        private GUI() { }
+        //private GUI() { }
         
         public static void iniciar()
         {
@@ -50,7 +54,7 @@ namespace ej03
             Console.Clear();
             Console.WriteLine("--------------------------------------------------");
             Console.WriteLine("--------------------{ TOP  5 }--------------------");
-            Console.WriteLine("--------------------------------------------------");
+            Console.WriteLine("--------------------------------------------------\n");
             List<PartidaMuestra> top5 = Fachada.top5();
             int cant = top5.Count();
             for (int i=0; i<=4; i++)
@@ -59,78 +63,72 @@ namespace ej03
                 {
                     Console.WriteLine("===================={ TOP  " + (i + 1) + " }====================");
                     Console.WriteLine("Nombre Jugador: " + top5[i].NombreJugador + "\t\t" + top5[i].Palabra);
-                    Console.WriteLine("Fecha:" + top5[i].FechaInicio + "\t" + top5[i].Duracion + "ms");
+                    Console.WriteLine("Fecha:" + top5[i].FechaInicio + "\t" + top5[i].Duracion + "ms\n");
                 }
                 else
                 {
                     Console.WriteLine("===================={ TOP  " + (i + 1) + " }====================");
-                    Console.WriteLine("                --- No jugado ---\n");
+                    Console.WriteLine("                --- No jugado ---\n\n");
                 }
             }
+            Console.WriteLine("///// PRESIONE CUALQUIER TECLA PARA CONTINUAR /////");
             Console.ReadKey();
         }
 
         private static void configurarIntentos()
         {
             Console.Write("Ingrese los intentos deseados: ");
-            Fachada.configurarIntentos(Int32.Parse(Console.ReadLine()));
+            Fachada.IntentosIniciales = Int32.Parse(Console.ReadLine());
+            Console.WriteLine("Los intentos fueron correctamente configurados a {0}!",Fachada.IntentosIniciales);
+            Console.Write("\n///// PRESIONE CUALQUIER TECLA PARA CONTINUAR /////");
+            Console.ReadKey();
         }
 
         private static void nuevaPartida()
         {
             Console.Write("Para comenzar ingrese su nombre: ");
-            Fachada.nuevaPartida(Console.ReadLine());
+            string nombreJugador = Console.ReadLine();
+            Fachada.nuevaPartida(nombreJugador);
             do
             {
 
                 Console.Clear();
                 string p = Fachada.PalabraEnCurso;
-                Console.WriteLine(PartidaActual.PalabraActual+"\n");
-                Console.WriteLine(PartidaActual.PalabraEnCurso + "\n");
+                Console.Write("\n\t-----{0}-----\n\n\n\n\t", nombreJugador);
                 for (int i=0; i<p.Length; i++)
                 {
                     Console.Write("  " + p[i]);
                 }
                 
-                Console.Write("\nLetras Acertadas:\t");
+                Console.Write("\n\n\n\tLetras Acertadas:\t");
                 imprimirLista(Fachada.LetrasAcertadas);
-                Console.Write("\nLetras Intentadas:\t");
+                Console.Write("\n\tLetras Intentadas:\t");
                 imprimirLista(Fachada.LetrasIntentadas);
-                Console.WriteLine("\nIntentos restantes: \t" + Fachada.Intentos+"\n");
+                Console.WriteLine("\n\tIntentos restantes: \t" + Fachada.IntentosRestantes+"\n");
                 if (Fachada.PartidaEnCurso())
                 {
-                    Console.Write("\tIngrese proxima letra:");
+                    Console.Write("\n\tIngrese proxima letra:");
                     Fachada.verificarLetra(Console.ReadLine().ToUpper().First());
                 }
-                
-                
             }
             while (Fachada.PartidaEnCurso());
             Fachada.finalizarPartida();
-            Console.WriteLine("\n");
+            Console.Clear();
             if (Fachada.verificarResultado())
             {
-                Console.WriteLine("\tGANASTE! :D");
+                string ganaste = "░░░░░░░▄▄▀▀▀▀▀▀▀▀▀▀▄▄█▄░░░░▄░░░░█░░░░░░░\n░░░░░░█▀░░░░░░░░░░░░░▀▀█▄░░░▀░░░░░░░░░▄░\n░░░░▄▀░░░░░░░░░░░░░░░░░▀██░░░▄▀▀▀▄▄░░▀░░\n░░▄█▀▄█▀▀▀▀▄░░░░░░▄▀▀█▄░▀█▄░░█▄░░░▀█░░░░\n░▄█░▄▀░░▄▄▄░█░░░▄▀▄█▄░▀█░░█▄░░▀█░░░░█░░░\n▄█░░█░░░▀▀▀░█░░▄█░▀▀▀░░█░░░█▄░░█░░░░█░░░\n██░░░▀▄░░░▄█▀░░░▀▄▄▄▄▄█▀░░░▀█░░█▄░░░█░░░\n██░░░░░▀▀▀░░░░░░░░░░░░░░░░░░█░▄█░░░░█░░░\n██░░░░░░░░░░░░░░░░░░░░░█░░░░██▀░░░░█▄░░░\n██░░░░░░░░░░░░░░░░░░░░░█░░░░█░░░░░░░▀▀█▄\n██░░░░░░░░░░░░░░░░░░░░█░░░░░█░░░░░░░▄▄██\n░██░░░░░░░░░░░░░░░░░░▄▀░░░░░█░░░░░░░▀▀█▄\n░▀█░░░░░░█░░░░░░░░░▄█▀░░░░░░█░░░░░░░▄▄██\n░▄██▄░░░░░▀▀▀▄▄▄▄▀▀░░░░░░░░░█░░░░░░░▀▀█▄\n░░▀▀▀▀░░░░░░░░░░░░░░░░░░░░░░█▄▄▄▄▄▄▄▄▄██\n░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\n";
+                Console.WriteLine("       GANASTE! BUEN TRABAJO! :D   \n\n{0}\n",ganaste);
             }
-            else { Console.WriteLine("\tte kbio pte :c"); }
+            else
+            {
+                string perdiste = "░░░░░░░░░░▄▄█▀▀▀▀▀▀▀▀█▄▄░░░░░░░░\n░░░░░░░▄▄▀▀░░░░░░░░░░░░▀▀▄▄░░░░░\n░░░░░▄█▀░░░░▄▀░░░░▄░░░░░░░▀█░░░░\n░░░░██▄▄████░░░░░░▀▄░░░░░░░░█▄░░\n░░▄████▀███▄▀▄░░░░░░███▄▄▄▄░░█░░\n░▄█████▄████░██░░░▄███▄▄░▀█▀░░█░\n▄███████▀▀░█░▄█░▄███▀█████░█░░▀▄\n█░█▀██▄▄▄▄█▀░█▀█▀██████▀░██▀█░░█\n█░█░▀▀▀▀▀░░░█▀░█░███▀▀░░▄█▀░█░░█\n█░░█▄░░░░▄▄▀░░░█░▀██▄▄▄██▀░░█▄░█\n█░░░░▀█▀▀▀░░░░░░█░░▀▀▀▀░░░░▄█░░█\n█░░░░░░░░░░░░░░░░▀▄░░░░░░▄█▀░░░█\n░█░░░░░░░░░░░░░░░░▀▀▀▀▀▀▀▄░░░░█░\n░░█░░░░░░▄▄▄▄▄▄▄░░░░░░░░░░░░░▄▀░\n░░░▀▄░░░░░▀█▄░░░▀▀██▄░░░░░░░▄▀░░\n░░░░░▀▄▄░░░░░▀▀▀▀▀░░░░░░░░▄▀░░░░\n░░░░░░░░▀▀▄▄▄░░░░░░░░▄▄▄▀▀█░░░░░\n░░░░░░░░░░▄▀▀█████▀▀▀▀░░░░██░░░░\n░░░░░░░░░█░░░██░░░█▀▀▀▀▀▀▀▀█░░░░";
+                Console.WriteLine("       te kbió por manco :c\n\n{0}\n",perdiste);
+                //TODO: el top 5 se rompe con las derrotas
+            }
+            Console.Write("\nLa palabra era: \"{0}\"\n", Fachada.PalabraActual);
+            Console.Write("\n\n///// PRESIONE CUALQUIER TECLA PARA CONTINUAR /////");
             Console.ReadKey();
         }
-        /*private static string estadoPalabra()
-        {//TODO: reemplazar esta mierda
-            string salida = "";
-            string palabra = Fachada.PalabraActual;
-            List<char> letrasIntentadas = Fachada.LetrasIntentadas;
-            foreach (char L in palabra)
-            {
-                if (letrasIntentadas.Contains(L))
-                {
-                    salida += L+" ";
-                }
-                else { salida += "_ "; }
-            }
-            return salida;
-        }*/
-
         private static void imprimirLista(List<char> unaLista)
         {
             foreach (char i in unaLista)

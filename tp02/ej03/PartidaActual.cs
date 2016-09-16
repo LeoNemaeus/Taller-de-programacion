@@ -150,10 +150,15 @@ namespace ej03
                 resultadoActual);
         }
 
-        public static int Intentos
+        public static int IntentosIniciales
+        {
+            get { return intentosIniciales; }
+            set { intentosIniciales = value; }
+        }
+        public static int IntentosActuales
         {
             get { return intentosActuales; }
-            set { intentosIniciales = Intentos; }
+            set { intentosActuales = value; }
         }
 
     }

@@ -8,13 +8,14 @@ namespace ej03
 {
     class Fachada
     {
-        public static void configurarIntentos(int pNumeroIntentos)
+        public static int IntentosIniciales
         {
-            PartidaActual.Intentos = pNumeroIntentos;
+            set { PartidaActual.IntentosIniciales = value; }
+            get { return PartidaActual.IntentosIniciales; }
         }
-        public static int Intentos
+        public static int IntentosRestantes
         {
-            get { return PartidaActual.Intentos; }
+            get { return PartidaActual.IntentosActuales; }
         }
         public static void PartidaEnCurso(bool valor)
         {
