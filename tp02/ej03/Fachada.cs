@@ -12,7 +12,10 @@ namespace ej03
         {
             PartidaActual.Intentos = pNumeroIntentos;
         }
-
+        public static int Intentos
+        {
+            get { return PartidaActual.Intentos; }
+        }
         public static void PartidaEnCurso(bool valor)
         {
             PartidaActual.PartidaEnCurso(valor);
@@ -43,17 +46,28 @@ namespace ej03
         }
         public static void nuevaPartida(string nombreJugador)
         {
-            PartidaActual.iniciarPartida(nombreJugador, PartidaActual.Intentos);
-            
-            // TODO: hacer atomico
+            PartidaActual.iniciarPartida(nombreJugador);
         }
-
+        public static bool verificarResultado()
+        {
+            if (PartidaActual.victoria())
+            {
+                return true;
+            }
+            else { return false; }
+        }
+        public static void finalizarPartida()
+        {
+            PartidaActual.finalizarPartida();
+        }
         public static List<PartidaMuestra> top5()
         {
-            List<PartidaMuestra> top5 = new List<PartidaMuestra>();//TODO: hacer para lista nula
-            List<Partida> partidas = Partida.ListaPartidas;
+            List<PartidaMuestra> top5 = new List<PartidaMuestra>();
+            List<Partida> partidas = Partida.filtrarParaElTop5();
+            int cant = partidas.Count();
+            if (cant>5) { cant = 5; }
             Partida iPartida;
-            for (int i=0; i<=4; i++)
+            for (int i=0; i<=cant-1; i++)
             {
                 iPartida = Partida.ListaPartidas[i];
                 PartidaMuestra iPartidaMuestra = new PartidaMuestra(iPartida.NombreJugador,
