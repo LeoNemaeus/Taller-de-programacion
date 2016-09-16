@@ -10,12 +10,14 @@ namespace ej03
     {
         public static void configurarIntentos(int pNumeroIntentos)
         {
-            PartidaActual.Intentos = pNumeroIntentos;
+            PartidaActual.intentos(pNumeroIntentos);
+            Console.WriteLine("Funciono :D");
         }
-        public static int Intentos
+        public static int intentos()
         {
-            get { return PartidaActual.Intentos; }
+            return PartidaActual.intentos();
         }
+        
         public static void PartidaEnCurso(bool valor)
         {
             PartidaActual.PartidaEnCurso(valor);
@@ -69,7 +71,7 @@ namespace ej03
             Partida iPartida;
             for (int i=0; i<=cant-1; i++)
             {
-                iPartida = Partida.ListaPartidas[i];
+                iPartida = partidas[i];
                 PartidaMuestra iPartidaMuestra = new PartidaMuestra(iPartida.NombreJugador,
                     iPartida.Palabra,
                     iPartida.Resultado,

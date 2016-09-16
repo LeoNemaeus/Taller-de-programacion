@@ -11,7 +11,7 @@ namespace ej03
         private static DateTime fechaInicioActual;
         private static DateTime fechaFinActual;
         private static string nombreJugadorActual;
-        private static int intentosIniciales = 10;
+        private static int intentosIniciales;
         private static int intentosActuales;
         private static string palabraActual;
         private static string palabraEnCurso;
@@ -150,10 +150,13 @@ namespace ej03
                 resultadoActual);
         }
 
-        public static int Intentos
+        public static void intentos(int pIntentos)
         {
-            get { return intentosActuales; }
-            set { intentosIniciales = Intentos; }
+            intentosIniciales = pIntentos;
+        }
+        public static int intentos()
+        {
+            return intentosActuales;
         }
 
     }

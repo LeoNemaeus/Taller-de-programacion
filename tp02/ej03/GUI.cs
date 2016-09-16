@@ -14,7 +14,10 @@ namespace ej03
         
         public static void iniciar()
         {
-            Console.Clear();            
+            Console.Clear();
+            Fachada.configurarIntentos(10);
+            Console.WriteLine("Intentos: "+Fachada.intentos());
+
             do
             {
                 Console.WriteLine("--------------------------------------------------");
@@ -59,7 +62,7 @@ namespace ej03
                 {
                     Console.WriteLine("===================={ TOP  " + (i + 1) + " }====================");
                     Console.WriteLine("Nombre Jugador: " + top5[i].NombreJugador + "\t\t" + top5[i].Palabra);
-                    Console.WriteLine("Fecha:" + top5[i].FechaInicio + "\t" + top5[i].Duracion + "ms");
+                    Console.WriteLine("Fecha:" + top5[i].FechaInicio + "\t" + top5[i].Duracion + "ms"+ top5[i].Resultado);
                 }
                 else
                 {
@@ -96,7 +99,7 @@ namespace ej03
                 imprimirLista(Fachada.LetrasAcertadas);
                 Console.Write("\nLetras Intentadas:\t");
                 imprimirLista(Fachada.LetrasIntentadas);
-                Console.WriteLine("\nIntentos restantes: \t" + Fachada.Intentos+"\n");
+                Console.WriteLine("\nIntentos restantes: \t" + Fachada.intentos()+"\n");
                 if (Fachada.PartidaEnCurso())
                 {
                     Console.Write("\tIngrese proxima letra:");
