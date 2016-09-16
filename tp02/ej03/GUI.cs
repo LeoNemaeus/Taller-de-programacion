@@ -115,7 +115,7 @@ namespace ej03
             {
                 Console.WriteLine("\tGANASTE! :D");
             }
-            else { Console.WriteLine("\tte kbio pte :c"); }
+            else { Console.WriteLine("\tte kbio pte :c"); } //TODO: cambiar mensajes de WIN y LOSE
             Console.ReadKey();
         }
         /*private static string estadoPalabra()
