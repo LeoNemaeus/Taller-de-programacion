@@ -69,10 +69,9 @@ namespace ej03
                 if (ListaPartidas[i].resultado==true)
                 {
                     ret.Add(ListaPartidas[i]);
-                    i++;
                     cont--;
                 }
-                
+                i++;
             }
             return ret;
         }

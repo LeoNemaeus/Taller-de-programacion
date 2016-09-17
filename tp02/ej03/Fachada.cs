@@ -17,6 +17,7 @@ namespace ej03
         {
             get { return PartidaActual.IntentosActuales; }
         }
+        
         public static void PartidaEnCurso(bool valor)
         {
             PartidaActual.PartidaEnCurso(valor);
@@ -70,7 +71,7 @@ namespace ej03
             Partida iPartida;
             for (int i=0; i<=cant-1; i++)
             {
-                iPartida = Partida.ListaPartidas[i];
+                iPartida = partidas[i];
                 PartidaMuestra iPartidaMuestra = new PartidaMuestra(iPartida.NombreJugador,
                     iPartida.Palabra,
                     iPartida.Resultado,
