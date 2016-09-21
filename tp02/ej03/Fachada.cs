@@ -22,9 +22,80 @@ namespace ej03
             PartidaActual.iniciarPartida(nombreJugador);
         }
 
+        /// <summary>
+        /// <para>Accesor a la palabra en curso.</para>
+        /// <returns>Retorna un String equivalente a la estructura de las letras adivinadas y que faltan adivinar.</returns>
+        /// </summary>
+        public static string PalabraEnCurso
+        {
+            get { return PartidaActual.PalabraEnCurso; }
+        }
 
+        /// <summary>
+        /// <para>Accesor a la palabra actual.</para>
+        /// </summary>
+        /// <return>Retorna un String equivalente a la palabra elegida aleatoriamente 
+        /// al inicio de la partida en su estado original.</return>
+        public static string PalabraActual
+        {
+            get { return PartidaActual.PalabraActual; }
+        }
 
+        /// <summary>
+        /// Verifica si la partida esta en curso o no.
+        /// </summary>
+        /// <returns>Retorna TRUE si está en curso, FALSE si se cumple una condición de fin de partida.</returns>
+        public static bool PartidaEnCurso()
+        {
+            return PartidaActual.PartidaEnCurso();
+        }
 
+        /// <summary>
+        /// Accesor a la lista de caracteres acertados.
+        /// </summary>
+        /// <returns>Devuelve una lista de caracteres que representa las letras que se acertaron.</returns>
+        public static List<char> LetrasAcertadas
+        {
+            get { return PartidaActual.LetrasAcertadas; }
+        }
+        /// <summary>
+        /// Accesor a la lista de caracteres intentados, acertados o no.
+        /// </summary>
+        /// <returns>Devuelve una lista de caracteres que representa las letras ingresadas por teclado.</returns>
+        public static List<char> LetrasIntentadas
+        {
+            get { return PartidaActual.LetrasIntentadas; }
+        }
+
+        /// <summary>
+        /// Se fija si <paramref name="unaLetra"/> es parte de la palabra a adivinar.
+        /// </summary>
+        /// <param name="unaLetra">Caracter que representa la letra con la que se intenta adivinar.</param>
+        public static void verificarLetra(char unaLetra)
+        {
+            PartidaActual.verificarLetra(unaLetra);
+        }
+
+        /// <summary>
+        /// Verifica el resultado final de la partida.
+        /// </summary>
+        /// <returns>Retorna TRUE si fue una victoria, o FALSE si fue una derrota.</returns>
+        public static bool verificarResultado()
+        {
+            if (PartidaActual.victoria())
+            {
+                return true;
+            }
+            else { return false; }
+        }
+
+        /// <summary>
+        /// Setea los datos de fin de partida
+        /// </summary>
+        public static void finalizarPartida()
+        {
+            PartidaActual.finalizarPartida();
+        }
 
         public static int IntentosIniciales
         {
@@ -36,47 +107,7 @@ namespace ej03
             get { return PartidaActual.IntentosActuales; }
         }
         
-        public static void PartidaEnCurso(bool valor)
-        {
-            PartidaActual.PartidaEnCurso(valor);
-        }
-        public static bool PartidaEnCurso()
-        {
-            return PartidaActual.PartidaEnCurso();
-        }
-        public static string PalabraEnCurso
-        {
-            get { return PartidaActual.PalabraEnCurso; }
-        }
-        public static string PalabraActual
-        {
-            get { return PartidaActual.PalabraActual; }
-        }
-        public static List<char> LetrasAcertadas
-        {
-            get { return PartidaActual.LetrasAcertadas; }
-        }
-        public static List<char> LetrasIntentadas
-        {
-            get { return PartidaActual.LetrasIntentadas; }
-        }
-        public static void verificarLetra(char unaLetra)
-        {
-            PartidaActual.verificarLetra(unaLetra);
-        }
         
-        public static bool verificarResultado()
-        {
-            if (PartidaActual.victoria())
-            {
-                return true;
-            }
-            else { return false; }
-        }
-        public static void finalizarPartida()
-        {
-            PartidaActual.finalizarPartida();
-        }
         public static List<PartidaMuestra> top5()
         {
             List<PartidaMuestra> top5 = new List<PartidaMuestra>();
