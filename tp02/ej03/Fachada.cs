@@ -6,8 +6,26 @@ using System.Threading.Tasks;
 
 namespace ej03
 {
+    /// <summary cref="Fachada">
+    /// <para>Clase del patrón de diseño "Controlador de Fachada",</para>
+    /// <para> desacopla la interfaz de usuario del resto del programa.</para>
+    /// </summary>
     class Fachada
     {
+        /// <summary>
+        /// <para>Setea los datos de <see cref="PartidaActual"/> para que se pueda jugar una nueva partida.</para>
+        /// <para>Los datos son la hora de inicio, el nombre del jugador y la cantidad de intentos.</para>
+        /// <param name="nombreJugador">String que representa el nombre a mostrar del usuario que desea jugar.</param>
+        /// </summary>
+        public static void nuevaPartida(string nombreJugador)
+        {
+            PartidaActual.iniciarPartida(nombreJugador);
+        }
+
+
+
+
+
         public static int IntentosIniciales
         {
             set { PartidaActual.IntentosIniciales = value; }
@@ -46,10 +64,7 @@ namespace ej03
         {
             PartidaActual.verificarLetra(unaLetra);
         }
-        public static void nuevaPartida(string nombreJugador)
-        {
-            PartidaActual.iniciarPartida(nombreJugador);
-        }
+        
         public static bool verificarResultado()
         {
             if (PartidaActual.victoria())
