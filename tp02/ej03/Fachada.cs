@@ -90,18 +90,27 @@ namespace ej03
         }
 
         /// <summary>
-        /// Setea los datos de fin de partida
+        /// <para>Setea los datos de fin de partida, como son la hora y el resultado.</para>
+        /// <para>Además crea un objeto de clase Partida con los datos especificados.</para>
         /// </summary>
         public static void finalizarPartida()
         {
             PartidaActual.finalizarPartida();
         }
 
+        /// <summary>
+        /// Propiedad que setea y obtiene un int equivalente a la cantidad de intentos que tiene
+        /// el jugador al inicio de la partida antes de perder. Predeterminados: "10" (diez).
+        /// </summary>
         public static int IntentosIniciales
         {
             set { PartidaActual.IntentosIniciales = value; }
             get { return PartidaActual.IntentosIniciales; }
         }
+
+        /// <summary>
+        /// Obtiene un int equivalene a los intentos restantes 
+        /// </summary>
         public static int IntentosRestantes
         {
             get { return PartidaActual.IntentosActuales; }
