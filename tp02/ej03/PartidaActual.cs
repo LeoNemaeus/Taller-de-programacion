@@ -11,10 +11,33 @@ namespace ej03
         private static DateTime fechaInicioActual;
         private static DateTime fechaFinActual;
         private static string nombreJugadorActual;
+        private static int intentosIniciales = 10;
         private static int intentosActuales;
         private static string palabraActual;
-        private static bool resultadoActual =false; // 0 perder, 1 ganar
+        private static string palabraEnCurso;
+        private static List<char> letrasIntentadas = new List<char>();
+        private static List<char> letrasAcertadas = new List<char>();
+        private static bool resultadoActual = false; // 0 perder, 1 ganar
+        private static bool partidaEnCurso = false;
 
+
+        public static string PalabraActual
+        {
+            get { return palabraActual; }
+        }
+        public static string PalabraEnCurso
+        {
+            get { return palabraEnCurso; }
+            set { palabraEnCurso = PalabraEnCurso; }
+        }
+        public static List<char> LetrasIntentadas
+        {
+            get { return letrasIntentadas; }
+        }
+        public static List<char> LetrasAcertadas
+        {
+            get { return letrasAcertadas; }
+        }
         private static void nuevaPalabra()
         {
             string[] palabras =
@@ -27,21 +50,97 @@ namespace ej03
                 "GARRAPIÑADA", "LGBT", "VELOCIRAPTOR", "YOUTUBER", "MONTICULO"
             };
             palabraActual = palabras[new Random().Next(0, 30)];
+            palabraEnCurso = "";
+            for (int i = 1; i <= palabraActual.Length; i++)
+            {
+                palabraEnCurso += "_";
+            }
         }
 
-        public static void iniciarPartida(string pNombreJugador, int pIntentos)
+        public static bool PartidaEnCurso()
+        {
+            if (victoria())
+            {
+                return false;
+            }
+            else if (derrota())
+            {
+                return false;
+            }
+            else return true;
+        }
+        public static void PartidaEnCurso(bool valor)
+        {
+            partidaEnCurso = valor;
+        }
+        public static void verificarLetra(char unaLetra)
+        {
+            letrasIntentadas.Add(unaLetra);
+            bool fallo = true;
+            for (int i = 0; i < (palabraActual.Length); i++)
+            {
+                if (palabraActual[i] == unaLetra)
+                {
+                    
+                    string prefijo = "", sufijo = "";
+                    letrasAcertadas.Add(unaLetra);
+                    for (int j = 0; j < i; j++)
+                    {
+                        prefijo += palabraEnCurso[j];
+                    }
+                    for (int k = i + 1; k < palabraActual.Length; k++)
+                    {
+                        sufijo += palabraEnCurso[k];
+                    }
+                    palabraEnCurso = prefijo + palabraActual[i] + sufijo;
+
+                    if (fallo) { fallo = false; }
+                }
+            }
+            if (fallo)
+            {
+                intentosActuales = intentosActuales - 1;
+            }
+        }
+        public static void iniciarPartida(string pNombreJugador)
         {
             nuevaPalabra();
             nombreJugadorActual = pNombreJugador;
-            intentosActuales = pIntentos;
+            intentosActuales = intentosIniciales;
+            partidaEnCurso = true;
             fechaInicioActual = DateTime.Now;
-            // TODO: hacer aqui el juego en si, resultado false?
-
+            letrasIntentadas = new List<char>();
+            letrasAcertadas = new List<char>();
+        }
+        public static void finalizarPartida()
+        {
             fechaFinActual = DateTime.Now;
-
+            partidaEnCurso = false;
+            if (victoria())
+            {
+                resultadoActual = true;
+            } else
+            {
+                resultadoActual = false;
+            }
             guardarPartida();
         }
-
+        public static bool derrota()
+        {
+            if (intentosActuales == 0)
+            {
+                return true;
+            }
+            else { return false; }
+        }
+        public static bool victoria()
+        {
+            if (palabraActual == palabraEnCurso)
+            {
+                return true;
+            }
+            else { return false; }
+        }
         private static void guardarPartida()
         {
             new Partida(fechaInicioActual, 
@@ -51,10 +150,15 @@ namespace ej03
                 resultadoActual);
         }
 
-        public static int Intentos
+        public static int IntentosIniciales
+        {
+            get { return intentosIniciales; }
+            set { intentosIniciales = value; }
+        }
+        public static int IntentosActuales
         {
             get { return intentosActuales; }
-            set { intentosActuales = Intentos; }
+            set { intentosActuales = value; }
         }
 
     }

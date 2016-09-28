@@ -58,5 +58,22 @@ namespace ej03
         {
             get { return this.duracion; }
         }
+
+        public static List<Partida> filtrarParaElTop5()
+        {
+            List<Partida> ret = new List<Partida>();
+            int cont = 5;
+            int i = 0;
+            while ((cont!=0)&&(i<ListaPartidas.Count()))
+            {
+                if (ListaPartidas[i].resultado==true)
+                {
+                    ret.Add(ListaPartidas[i]);
+                    cont--;
+                }
+                i++;
+            }
+            return ret;
+        }
     }
 }
