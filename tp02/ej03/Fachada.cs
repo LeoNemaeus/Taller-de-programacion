@@ -116,15 +116,20 @@ namespace ej03
             get { return PartidaActual.IntentosActuales; }
         }
         
-        
+        /// <summary>
+        /// Trabaja sobre la lista de Partidas y las transforma en PartidaMuestras.
+        /// Pone las 5 victorias más rápidas ordenadas descendientemente.
+        /// Si no hay suficientes partidas sólo trabajará las que encuentre.
+        /// </summary>
+        /// <returns>Devuelve una List de PartidaMuestra.</returns>
         public static List<PartidaMuestra> top5()
         {
             List<PartidaMuestra> top5 = new List<PartidaMuestra>();
-            List<Partida> partidas = Partida.filtrarParaElTop5();
+            List<Partida> partidas = Partida.filtrarParaElTop5(); // el filtro en si
             int cant = partidas.Count();
-            if (cant>5) { cant = 5; }
+            if (cant>5) { cant = 5; } // hasta 5
             Partida iPartida;
-            for (int i=0; i<=cant-1; i++)
+            for (int i=0; i<cant; i++) // armamos la estructura
             {
                 iPartida = partidas[i];
                 PartidaMuestra iPartidaMuestra = new PartidaMuestra(iPartida.NombreJugador,
