@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
-MinimumVisualStudioVersion = 10.0.40219.1
+# Visual Studio Express 2012 for Windows Desktop
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ej01", "ej01\ej01.csproj", "{47B2BFDE-1B16-48AA-B3AD-3FB1886CDAC9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ej02", "ej02\ej02.csproj", "{BD5ED147-77FB-46CE-B628-3B0E1AC9DF98}"
@@ -12,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ej04", "ej04\ej04.csproj", "{DCF0246F-1B13-4014-8663-89C85535ED4F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ej05", "ej05\ej05.csproj", "{B000148E-9DF8-4E53-B8FF-8346C55B092E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComplejoTest", "ComplejoTest\ComplejoTest.csproj", "{CD3B95B1-2E9B-4F6F-AEA5-BA210C959C97}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +39,10 @@ Global
 		{B000148E-9DF8-4E53-B8FF-8346C55B092E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B000148E-9DF8-4E53-B8FF-8346C55B092E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B000148E-9DF8-4E53-B8FF-8346C55B092E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD3B95B1-2E9B-4F6F-AEA5-BA210C959C97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD3B95B1-2E9B-4F6F-AEA5-BA210C959C97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD3B95B1-2E9B-4F6F-AEA5-BA210C959C97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD3B95B1-2E9B-4F6F-AEA5-BA210C959C97}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
