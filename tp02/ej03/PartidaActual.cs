@@ -36,17 +36,27 @@ namespace ej03
             get { return palabraEnCurso; }
             set { palabraEnCurso = value; }
         }
+
         /// <summary>
-        /// 
+        /// Getter de las letras intentadas, devuelve una List de char.
         /// </summary>
         public static List<char> LetrasIntentadas
         {
             get { return letrasIntentadas; }
         }
+        /// <summary>
+        /// Getter de las letras acertadas, devuelve una List de char.
+        /// </summary>
         public static List<char> LetrasAcertadas
         {
             get { return letrasAcertadas; }
         }
+
+        /// <summary>
+        /// Selecciona una palabra aleatoria de un array, la guarda en palabraActual, e
+        /// inicializa palabraEnCurso como un string de guiones bajos como el largo de la
+        /// palabra elegida.
+        /// </summary>
         private static void nuevaPalabra()
         {
             string[] palabras =
@@ -66,8 +76,13 @@ namespace ej03
             }
         }
 
+        /// <summary>
+        /// Indica si se esta jugando o no.
+        /// </summary>
+        /// <returns>Devuelve true si se esta jugando. False si la partida no esta activa.</returns>
         public static bool PartidaEnCurso()
         {
+            // al ganar o perder se entiende que la partida termino
             if (victoria())
             {
                 return false;
@@ -78,6 +93,11 @@ namespace ej03
             }
             else return true;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="valor"></param>
         public static void PartidaEnCurso(bool valor)
         {
             partidaEnCurso = valor;
