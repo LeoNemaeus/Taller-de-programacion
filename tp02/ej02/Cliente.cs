@@ -8,12 +8,24 @@ using System.Text;
  */
 namespace ej02
 {
+    /// <summary>
+    /// Representa un Cliente.
+    /// Propiedades:    - TipoDocumento
+    ///                 - NroDocumento
+    ///                 - Nombre
+    /// </summary>
     public class Cliente
     {
         private String iNroDocumento;
         private String iNombre;
         private TipoDocumento iTipoDocumento;
 
+        /// <summary>
+        /// Inicializa una nueva instancia de un cliente.
+        /// </summary>
+        /// <param name="pTipoDocumento"></param>
+        /// <param name="pNroDocumento"></param>
+        /// <param name="pNombre"></param>
         public Cliente(TipoDocumento pTipoDocumento, string pNroDocumento, string pNombre)
         {
             this.iNroDocumento = pNroDocumento;
