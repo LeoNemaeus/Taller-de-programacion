@@ -15,6 +15,7 @@ namespace ej02
             string opción;
             double x;
 
+            // Ciclo menú principal.
             do
             {
                 Console.Clear();
@@ -33,6 +34,7 @@ namespace ej02
 
                 switch(opción)
                 {
+                    // Acreditar saldo a caja de ahorro
                     case "a":
                         Console.Clear();
                         Console.WriteLine("Gestión de cuentas - acreditar saldo a caja de ahorro:");
@@ -45,6 +47,7 @@ namespace ej02
                         Console.Write("Presione una tecla para continuar...");
                         Console.ReadKey();
                         break;
+                    //Debitar saldo a caja de ahorro
                     case "b":
                         Console.Clear();
                         Console.WriteLine("Gestión de cuentas - debitar saldo a caja de ahorro:");
@@ -61,6 +64,7 @@ namespace ej02
                         Console.Write("Presione una tecla para continuar...");
                         Console.ReadKey();
                         break;
+                    // Acreditar saldo a cuenta corriente
                     case "c":
                         Console.Clear();
                         Console.WriteLine("Gestión de cuentas - acreditar saldo a cuenta corriente:");
@@ -73,6 +77,7 @@ namespace ej02
                         Console.Write("Presione una tecla para continuar...");
                         Console.ReadKey();
                         break;
+                    // Debitar saldo a cuenta corriente
                     case "d":
                         Console.Clear();
                         Console.WriteLine("Gestión de cuentas - debitar saldo a cuenta corriente:");
@@ -89,6 +94,7 @@ namespace ej02
 
                         Console.ReadKey();
                         break;
+                    // Consultar saldo caja de ahorro
                     case "e":
                         Console.Clear();
                         Console.WriteLine("Gestión de cuentas - consultar saldo caja de ahorro:");
@@ -98,6 +104,7 @@ namespace ej02
                         Console.Write("Presione una tecla para continuar...");
                         Console.ReadKey();
                         break;
+                    // Consultar saldo cuenta corriente
                     case "f":
                         Console.Clear();
                         Console.WriteLine("Gestión de cuentas - consultar saldo cuenta corriente:");
@@ -107,6 +114,7 @@ namespace ej02
                         Console.Write("Presione una tecla para continuar...");
                         Console.ReadKey();
                         break;
+                    //Consultar acuerdo caja de ahorro
                     case "g":
                         Console.Clear();
                         Console.WriteLine("Gestión de cuentas - consultar acuerdo caja de ahorro:");
@@ -116,6 +124,7 @@ namespace ej02
                         Console.Write("Presione una tecla para continuar...");
                         Console.ReadKey();
                         break;
+                    //Consultar acuerdo cuenta corriente
                     case "h":
                         Console.Clear();
                         Console.WriteLine("Gestión de cuentas - consultar acuerdo cuenta corriente:");
@@ -128,6 +137,7 @@ namespace ej02
                     default:
                         break;
             }
+            // Salir
             } while (opción != "q");
 
         }
