@@ -7,14 +7,24 @@ namespace Ej05.Tests
     [TestClass()]
     public class FechaTest
     {
+        /// <summary>
+        /// Objetos de prueba para realizar los tests.
+        /// </summary>
         Fechas iUnaFecha = new Fechas(14, 12, 1945);
         Fechas iOtraFecha;
+
+        /// <summary>
+        /// Test del constructor
+        /// </summary>
         [TestMethod()]
         public void FechasTest()
         {
             Assert.IsNotNull(iUnaFecha);
         }
 
+        /// <summary>
+        /// Test de AgregarDias. Compara día, mes, año y el día de la semana
+        /// </summary>
         [TestMethod()]
         public void AgregarDiasTest()
         {
@@ -28,6 +38,9 @@ namespace Ej05.Tests
 
         }
 
+        /// <summary>
+        /// Test de AgregarMeses. Compara día, mes, año y el día de la semana
+        /// </summary>
         [TestMethod()]
         public void AgregarMesesTest()
         {
@@ -40,6 +53,9 @@ namespace Ej05.Tests
             Assert.AreEqual(iOtraFecha.Año, mResultado.Año);
         }
 
+        /// <summary>
+        /// Test de AgregarAños. Compara día, mes, año y el día de la semana
+        /// </summary>
         [TestMethod()]
         public void AgregarAñosTest()
         {
@@ -52,11 +68,17 @@ namespace Ej05.Tests
             Assert.AreEqual(iOtraFecha.Año, mResultado.Año);
         }
 
+        /// <summary>
+        /// Test de EsBisiesto. Prueba algunos ejemplos de años bisiestos y no bisiestos.
+        /// </summary>
         [TestMethod()]
         public void EsBisiestoTest()
         {
+            //Bisiestos
             Assert.IsTrue(Fechas.EsBisiesto(2012));
             Assert.IsTrue(Fechas.EsBisiesto(2016));
+            
+            //No bisiestos
             Assert.IsFalse(Fechas.EsBisiesto(1915));
             Assert.IsFalse(Fechas.EsBisiesto(1905));
         }
