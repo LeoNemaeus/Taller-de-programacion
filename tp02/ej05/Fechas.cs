@@ -162,7 +162,7 @@ namespace Ej05
 
 //__________________________________________________________________________________________________________________________
         // Realiza el cálculo del año en caso de ser bisiesto.
-        private static bool EsBisiesto(int pAño)
+        public static bool EsBisiesto(int pAño)
         {
             return (pAño % 4 == 0 || (pAño % 100 != 0 && pAño % 400 == 0));
         }

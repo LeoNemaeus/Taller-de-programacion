@@ -19,6 +19,7 @@ namespace Ej05
     {
         static void Main(string[] args)
         {
+            /*
             
             string opc;
 
@@ -75,14 +76,14 @@ namespace Ej05
                         Console.WriteLine("Ingrese Año (aaaa): ");
                         int xAño = Convert.ToInt32(Console.ReadLine());
                         break;*/
-
+                        /*
                     case "s":
                         Console.WriteLine("Gracias por usar el software");
                         break;
                 }
             } while (opc != "s");
             Console.ReadKey();
-
+            */
 
         }
     }
