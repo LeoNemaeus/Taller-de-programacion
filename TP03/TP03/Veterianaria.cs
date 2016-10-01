@@ -6,13 +6,12 @@ using System.Threading.Tasks;
 
 namespace TP03
 {
-    class Program
+    class Veterianaria
     {
-        static void Main(string[] args)
+        public void AceptarAnimales(pAnimales: Animal[])
+
         {
-            Animal animal = new Perro();
-            animal.HacerRuido();
-            
+
         }
     }
 }

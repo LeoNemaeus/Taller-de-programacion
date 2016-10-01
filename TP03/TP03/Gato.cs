@@ -6,13 +6,11 @@ using System.Threading.Tasks;
 
 namespace TP03
 {
-    class Program
+    public class Gato : Animal
     {
-        static void Main(string[] args)
+        public override void HacerRuido()
         {
-            Animal animal = new Perro();
-            animal.HacerRuido();
-            
+            Console.WriteLine("Miau");
         }
     }
 }
