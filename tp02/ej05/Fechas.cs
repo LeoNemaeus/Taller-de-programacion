@@ -218,12 +218,8 @@ namespace Ej05
             return mCantidadDias;
         }
 
-        /// <summary>
-        /// Realiza el cálculo del año en caso de ser bisiesto.
-        /// </summary>
-        /// <param name="pAño"> el año que se quiere calcular</param>
-        /// <returns> Devuelve true en caso de ser verdadero, false en caso contrario. </returns>
-
+//__________________________________________________________________________________________________________________________
+        // Realiza el cálculo del año en caso de ser bisiesto.
         private static bool EsBisiesto(int pAño)
         {
             return (pAño % 4 == 0 || (pAño % 100 != 0 && pAño % 400 == 0));
