@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ej03
 {
-    class Cliente
+    public class Cliente
     {
         String iNombre, iApellido;
         DateTime iFechaNacimiento;
