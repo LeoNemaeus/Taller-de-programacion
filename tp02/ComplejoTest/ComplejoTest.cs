@@ -5,9 +5,16 @@ using ej04;
 
 namespace ComplejoTest
 {
+    /// <summary>
+    /// La clase <c>ComplejoTest</c> prueba todos los métodos de la clase <c>Complejo</c>
+    /// </summary>
     [TestClass]
     public class ComplejoTest
     {
+        /// <summary>
+        /// El TestMethod <remarks>UnConjugado</remarks> analiza si el resultado es el conjugado de un número complejo ingresado
+        /// usando el método <remarks> Conjugado</remarks> de la clase <c>Complejo</c>        
+        /// </summary>       
         [TestMethod]
         public void UnConjugado()
         {
@@ -20,6 +27,10 @@ namespace ComplejoTest
             Assert.AreEqual(ResultadoEsperado.Imaginario, Resultado.Imaginario);
         }
 
+        /// <summary>
+        /// El TestMethod <remarks> SumarComplejos</remarks> analiza el resultado de la suma entre dos complejos usando 
+        /// el método <remarks>Sumar</remarks> de la clase <c>Complejo</c>.
+        /// </summary>
         [TestMethod]
         public void SumarComplejos()
         {
@@ -33,6 +44,10 @@ namespace ComplejoTest
             Assert.AreEqual(ResultadoEsperado.Imaginario, Resultado.Imaginario);
         }
 
+        /// <summary>
+        /// El TestMethod <remarks>RestarComplejos</remarks> analiza el resultado de la resta entre dos complejos usando 
+        /// el método <remarks>Restar</remarks> de la clase <c>Complejo</c>.
+        /// </summary>
         [TestMethod]
         public void RestarComplejos()
         {
@@ -46,6 +61,10 @@ namespace ComplejoTest
             Assert.AreEqual(ResultadoEsperado.Imaginario, Resultado.Imaginario);
         }
 
+        /// <summary>
+        /// El TestMethod <remarks>MultiplicarComplejos</remarks> analiza el resultado de la multiplicación entre dos complejos usando 
+        /// el método <remarks>MultiplicarPor</remarks> de la clase <c>Complejo</c>.
+        /// </summary>
         [TestMethod]
         public void MultiplicarComplejos()
         {
@@ -59,6 +78,10 @@ namespace ComplejoTest
             Assert.AreEqual(ResultadoEsperado.Imaginario, Resultado.Imaginario);
         }
 
+        /// <summary>
+        /// El TestMethod <remarks> DividirComplejos</remarks> analiza el resultado de la división entre dos complejos usando 
+        /// el método <remarks>DividirPor</remarks> de la clase <c>Complejo</c>.
+        /// </summary>
         [TestMethod]
         public void DividirComplejos()
         {
