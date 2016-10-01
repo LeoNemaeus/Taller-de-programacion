@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ej05
 {
-    class Fechas
+    public class Fechas
     {
         // Atributos
         private const int AÑO_BASE = 1900, AÑO_MAXIMO = 2499;

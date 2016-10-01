@@ -8,36 +8,55 @@ namespace ej03
 {
     class PartidaActual
     {
+        // atributos
         private static DateTime fechaInicioActual;
         private static DateTime fechaFinActual;
         private static string nombreJugadorActual;
-        private static int intentosIniciales = 10;
-        private static int intentosActuales;
-        private static string palabraActual;
-        private static string palabraEnCurso;
+        private static int intentosIniciales = 10; // se usa al crear la partida, 10 por defecto
+        private static int intentosActuales; // se usa durante la partida
+        private static string palabraActual; // la palabra que se intenta adivinar
+        private static string palabraEnCurso; // estado actual de la palabra
         private static List<char> letrasIntentadas = new List<char>();
         private static List<char> letrasAcertadas = new List<char>();
         private static bool resultadoActual = false; // 0 perder, 1 ganar
-        private static bool partidaEnCurso = false;
+        private static bool partidaEnCurso = false; // 0 no partida, 1 si partida
 
-
+        /// <summary>
+        /// getter de palabra Actual, devuelve String.
+        /// </summary>
         public static string PalabraActual
         {
             get { return palabraActual; }
         }
+        /// <summary>
+        /// getter y setter de palabra en curso, devuelve y asigna String.
+        /// </summary>
         public static string PalabraEnCurso
         {
             get { return palabraEnCurso; }
-            set { palabraEnCurso = PalabraEnCurso; }
+            set { palabraEnCurso = value; }
         }
+
+        /// <summary>
+        /// Getter de las letras intentadas, devuelve una List de char.
+        /// </summary>
         public static List<char> LetrasIntentadas
         {
             get { return letrasIntentadas; }
         }
+        /// <summary>
+        /// Getter de las letras acertadas, devuelve una List de char.
+        /// </summary>
         public static List<char> LetrasAcertadas
         {
             get { return letrasAcertadas; }
         }
+
+        /// <summary>
+        /// Selecciona una palabra aleatoria de un array, la guarda en palabraActual, e
+        /// inicializa palabraEnCurso como un string de guiones bajos como el largo de la
+        /// palabra elegida.
+        /// </summary>
         private static void nuevaPalabra()
         {
             string[] palabras =
@@ -57,8 +76,13 @@ namespace ej03
             }
         }
 
+        /// <summary>
+        /// Indica si se esta jugando o no.
+        /// </summary>
+        /// <returns>Devuelve true si se esta jugando. False si la partida no esta activa.</returns>
         public static bool PartidaEnCurso()
         {
+            // al ganar o perder se entiende que la partida termino
             if (victoria())
             {
                 return false;
@@ -69,10 +93,21 @@ namespace ej03
             }
             else return true;
         }
-        public static void PartidaEnCurso(bool valor)
+        /// <summary>
+        /// Setea si la partida sigue en curso o no.
+        /// </summary>
+        /// <param name="valor">true para en curso, false para no en curso.</param>
+        public static void EstadoPartida(bool valor)
         {
             partidaEnCurso = valor;
         }
+
+        /// <summary>
+        /// Verifica si una letra pasada como parametro es parte de la palabra actual.
+        /// Además, si la letra está en la palabra, modifica la palabra en curso y revela
+        /// la letra. Sino, disminuye en 1 los intentos restantes.
+        /// </summary>
+        /// <param name="unaLetra">El char que se va a verificar.</param>
         public static void verificarLetra(char unaLetra)
         {
             letrasIntentadas.Add(unaLetra);
