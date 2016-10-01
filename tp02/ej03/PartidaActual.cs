@@ -93,15 +93,21 @@ namespace ej03
             }
             else return true;
         }
-
         /// <summary>
-        /// 
+        /// Setea si la partida sigue en curso o no.
         /// </summary>
-        /// <param name="valor"></param>
-        public static void PartidaEnCurso(bool valor)
+        /// <param name="valor">true para en curso, false para no en curso.</param>
+        public static void EstadoPartida(bool valor)
         {
             partidaEnCurso = valor;
         }
+
+        /// <summary>
+        /// Verifica si una letra pasada como parametro es parte de la palabra actual.
+        /// Además, si la letra está en la palabra, modifica la palabra en curso y revela
+        /// la letra. Sino, disminuye en 1 los intentos restantes.
+        /// </summary>
+        /// <param name="unaLetra">El char que se va a verificar.</param>
         public static void verificarLetra(char unaLetra)
         {
             letrasIntentadas.Add(unaLetra);
