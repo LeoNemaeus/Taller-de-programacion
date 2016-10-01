@@ -59,14 +59,12 @@ namespace ej03
         /// </summary>
         private static void nuevaPalabra()
         {
+            
             string[] palabras =
             {
-                "TATO", "PATRIARCADO", "DARKS", "PYTHON", "BULBASAUR",
-                "PENTAKILL", "INICIATIVA", "YGGDRASIL", "KATARINA", "IRACUNDO",
-                "CONDENSADOR", "DILDO", "LICUADO", "TESERACTO", "JASPE",
-                "POLONIA", "CINNAMON", "KILOBYTE", "IBUEVANOL", "ARENA",
-                "TROLL", "MUFFIN", "STRIPPER", "SEMICORCHEA", "ELOCUENCIA",
-                "GARRAPIÑADA", "LGBT", "VELOCIRAPTOR", "YOUTUBER", "MONTICULO"
+                "COLECCION", "HAMBURGUESAS", "FLAMINGO", "ERROR", "SUBTITULOS", "CERROJO",
+                "MESA", "EXCEPCION", "ARREGLO", "ALGORITMO", "PROGRAMA", "PARADIGMA", "OBJETO",
+                "CLASE", "CODIGO"
             };
             palabraActual = palabras[new Random().Next(0, 30)];
             palabraEnCurso = "";
