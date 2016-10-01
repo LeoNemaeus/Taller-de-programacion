@@ -9,7 +9,7 @@ namespace Ej05
     /// <summary>
     /// Representa una fecha entre el 01/01/1900 y el 31/12/2499.
     /// </summary>
-    class Fechas
+    public class Fechas
     {
         /// <summary>
         /// Tomamos el año base como inicio desde el 1 de enero de 1900 y año máximo hasta el 31 de diciembre de 2499.
@@ -128,7 +128,7 @@ namespace Ej05
         /// <<param name="pCantidadDias">Cantidad de días.</param>
         /// <exception cref="ArgumentException">Si <paramref name="pCantidadDias"/> no está comprendido entre 1 y 219.146.</exception>
         
-        private Fechas(long pCantidadDias)
+        public Fechas(long pCantidadDias)
         {
 
             if (pCantidadDias < 1 || pCantidadDias > 219146)
@@ -218,9 +218,11 @@ namespace Ej05
             return mCantidadDias;
         }
 
-//__________________________________________________________________________________________________________________________
-        // Realiza el cálculo del año en caso de ser bisiesto.
-        private static bool EsBisiesto(int pAño)
+        /// <summary>
+        /// Realiza el cálculo del año en caso de ser bisiesto.
+        /// </summary>
+
+        public static bool EsBisiesto(int pAño)
         {
             return (pAño % 4 == 0 || (pAño % 100 != 0 && pAño % 400 == 0));
         }
