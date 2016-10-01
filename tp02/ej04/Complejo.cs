@@ -35,7 +35,7 @@ namespace ej04
         /// </summary>
           public double ArgumentoEnRadianes
         {
-            get { return ((Math.Atan(this.Imaginario / this.Real) * (Math.PI/ 180))); } 
+            get { return ((this.Magnitud) * (Math.PI/ 180)); } 
         }
         
         /// <summary>
@@ -43,7 +43,7 @@ namespace ej04
         /// </summary>
         public double ArgumentoEnGrados
         {
-            get { return ((Math.Atan(this.Imaginario / this.Real) * (180/Math.PI))); } 
+            get { return ((this.Magnitud)* (180/Math.PI)); } 
         }
         
         /// <summary>
