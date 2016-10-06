@@ -28,8 +28,8 @@ namespace Ej05.Tests
         [TestMethod()]
         public void AgregarDiasTest()
         {
-            iOtraFecha = new Fechas(25, 02, 2016);
-            Fechas mResultado = iUnaFecha.AgregarDias(25640);
+            iOtraFecha = new Fechas(15, 12, 1945);
+            Fechas mResultado = iUnaFecha.AgregarDias(1);
 
             Assert.AreEqual(iOtraFecha.DiaDeLaSemana, mResultado.DiaDeLaSemana);
             Assert.AreEqual(iOtraFecha.Dia, mResultado.Dia);
@@ -39,15 +39,14 @@ namespace Ej05.Tests
         }
 
         /// <summary>
-        /// Test de AgregarMeses. Compara día, mes, año y el día de la semana
+        /// Test de AgregarMeses. Compara día, mes y año
         /// </summary>
         [TestMethod()]
         public void AgregarMesesTest()
         {
-            iOtraFecha = new Fechas(14, 07, 1947);
+            iOtraFecha = new Fechas(14, 08, 1947);
             Fechas mResultado = iUnaFecha.AgregarMeses(20);
 
-            Assert.AreEqual(iOtraFecha.DiaDeLaSemana, mResultado.DiaDeLaSemana);
             Assert.AreEqual(iOtraFecha.Dia, mResultado.Dia);
             Assert.AreEqual(iOtraFecha.Mes, mResultado.Mes);
             Assert.AreEqual(iOtraFecha.Año, mResultado.Año);
@@ -59,7 +58,7 @@ namespace Ej05.Tests
         [TestMethod()]
         public void AgregarAñosTest()
         {
-            iOtraFecha = new Fechas(14, 12, 1965);
+            iOtraFecha = (new Fechas(14, 12, 1965));
             Fechas mResultado = iUnaFecha.AgregarAños(20);
 
             Assert.AreEqual(iOtraFecha.DiaDeLaSemana, mResultado.DiaDeLaSemana);
@@ -81,6 +80,19 @@ namespace Ej05.Tests
             //No bisiestos
             Assert.IsFalse(Fechas.EsBisiesto(1915));
             Assert.IsFalse(Fechas.EsBisiesto(1905));
+        }
+
+        [TestMethod]
+        public void CompararFechaTest()
+        {
+            int mResultado = iUnaFecha.CompararFecha(new Fechas(4, 11, 2021));
+            Assert.AreEqual(-1, mResultado);
+
+            mResultado = iUnaFecha.CompararFecha(new Fechas(14, 12, 1945));
+            Assert.AreEqual(0, mResultado);
+
+            mResultado = iUnaFecha.CompararFecha(new Fechas(14, 12, 1943));
+            Assert.AreEqual(1, mResultado);
         }
     }
 }

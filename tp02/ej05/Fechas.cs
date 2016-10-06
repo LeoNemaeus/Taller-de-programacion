@@ -85,7 +85,8 @@ namespace Ej05
 
         public Fechas (int pDia, int pMes, int pAño)
         {
-            if ((pAño < AÑO_BASE || pAño > AÑO_MAXIMO) && (pMes < 1 || pMes > 12) && (pDia < 1 || pDia > Fechas.CalcularCantidadDiasMes(pMes, pAño)))
+            /*if (!(pAño < AÑO_BASE || pAño > AÑO_MAXIMO) && (pMes < 1 || pMes > 12) && (pDia < 1 || pDia > Fechas.CalcularCantidadDiasMes(pMes, pAño)))*/
+            if (((pAño >= AÑO_BASE) && (pAño <= AÑO_MAXIMO) && (pMes >= 1) && (pMes <=12) && (pDia >= 1) && (pDia <= Fechas.CalcularCantidadDiasMes(pMes, pAño)) ))
             {
                 this.iDia = pDia;
                 this.iMes = pMes;
@@ -115,10 +116,7 @@ namespace Ej05
             }
             else
             {
-                this.iDia = 1;
-                this.iAño = AÑO_BASE;
-                this.iCantidadDias = 1;
-                this.iMes = 1;
+                throw new ArgumentNullException("La fecha proporcionada está fuera de los límites.");
             }
         }
 
@@ -131,7 +129,7 @@ namespace Ej05
         public Fechas(long pCantidadDias)
         {
 
-            if (pCantidadDias < 1 || pCantidadDias > 219146)
+            if ((pCantidadDias >= 1) && (pCantidadDias <= 219146))
             {
 
                 this.iCantidadDias = pCantidadDias;
@@ -235,7 +233,8 @@ namespace Ej05
         /// <returns> Devuelve una nueva instancia de agregar <param name="pCantidadDias">. </returns>
         public Fechas AgregarDias(int pCantidadDias)
         {
-            return new Fechas(this.iCantidadDias + pCantidadDias);
+            Fechas mNuevaFecha = new Fechas(this.iCantidadDias + pCantidadDias);
+            return mNuevaFecha;
         }
         
         /// <summary>
@@ -269,7 +268,7 @@ namespace Ej05
                 mCantidadDias += Fechas.CalcularCantidadDiasMes(mMesActual, mAñoActual);
             }
 
-            return new Fechas(this.iCantidadDias + mCantidadDias);
+            return new Fechas((this.iCantidadDias + mCantidadDias));
         }
 
         /// <summary>
@@ -287,7 +286,7 @@ namespace Ej05
                 mCantidadDias += Fechas.CalcularCantidadDiasAño(this.iAño + bIndice);
             }
 
-            return new Fechas(this.iCantidadDias + mCantidadDias);
+            return new Fechas((this.iCantidadDias + mCantidadDias));
         }
         /// <summary>
         /// Indica si la fecha pertenece a un año bisiesto.
