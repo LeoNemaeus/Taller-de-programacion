@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ej03
 {
-    //TODO: implementar EsVálida() en EvaluadorMonto
+    //TODO: testear EsVálida() en CantidadCuotas
     public class EvaluadorCantidadCuotas : IEvaluador
     {
         int iCantidadMaximaCuotas;
@@ -18,9 +18,10 @@ namespace ej03
 
         public bool EsValida(SolicitudPrestamo pSolicitud)
         {
-            base.EsValida();
+            if (pSolicitud.Monto <= iCantidadMaximaCuotas)
+                return true;
 
-
+            return false;
         }
     }
 }
