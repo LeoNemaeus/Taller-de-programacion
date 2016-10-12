@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 // zi
 namespace ej03
 {
+    /// <summary>
+    /// Clase Modelo del MVC, para la clase Partida. Para que la Interfaz de usuario interactúe.
+    /// </summary>
     class PartidaMuestra
     {
         private string nombreJugador;

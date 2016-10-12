@@ -135,6 +135,10 @@ namespace ej03
                 intentosActuales = intentosActuales - 1;
             }
         }
+        /// <summary>
+        /// Inivia una nueva partida. Pone a la clase en estado "partida en curso".
+        /// </summary>
+        /// <param name="pNombreJugador">String que representa el nombre la persona que va a jugar.</param>
         public static void iniciarPartida(string pNombreJugador)
         {
             nuevaPalabra();
@@ -145,6 +149,10 @@ namespace ej03
             letrasIntentadas = new List<char>();
             letrasAcertadas = new List<char>();
         }
+        /// <summary>
+        /// Pone a la partida en estado "partida NO en curso".
+        /// Además, determina si la partida anterior fue una victoria o una derrota.
+        /// </summary>
         public static void finalizarPartida()
         {
             fechaFinActual = DateTime.Now;
@@ -174,6 +182,9 @@ namespace ej03
             }
             else { return false; }
         }
+        /// <summary>
+        /// Crea un objeto de clase Partida con todos los datos de la última partida jugada.
+        /// </summary>
         private static void guardarPartida()
         {
             new Partida(fechaInicioActual, 
@@ -183,6 +194,10 @@ namespace ej03
                 resultadoActual);
         }
 
+        /// <summary>
+        /// Property que obtiene y determina la cantidad de intentos que se tienen al iniciar una partida.
+        /// Los datos de entrada y salida son de tipo int.
+        /// </summary>
         public static int IntentosIniciales
         {
             get { return intentosIniciales; }

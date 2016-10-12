@@ -6,21 +6,37 @@ using System.Threading.Tasks;
 
 namespace ej03
 {
+    /// <summary>
+    /// Clase para guardar las partidas guardadas. Cada instancia es una partida.
+    /// </summary>
     class Partida
     {
-        private DateTime fechaInicio;
-        private DateTime fechaFin;
-        private string nombreJugador;
-        private string palabra;
-        private bool resultado;
-        private double duracion;
+        private DateTime fechaInicio; //cuando comenzó
+        private DateTime fechaFin; // cuando terminó
+        private string nombreJugador; // quién jugó
+        private string palabra; // cual era la palabra
+        private bool resultado; // true si ganó, false si perdió
+        private double duracion; // fechaFin - fechaInicio, se guarda por cuestiones de eficiencia
 
+        // atributo de clase que guarda las instancias de la misma.
         private static List<Partida> listaPartidas = new List<Partida>();
+
+        /// <summary>
+        /// Property para conseguir la lista de partidas.
+        /// </summary>
         public static List<Partida> ListaPartidas
         {
             get { return listaPartidas; }
         }
 
+        /// <summary>
+        /// Constructor. Crea el objeto y lo añade a la lista.
+        /// </summary>
+        /// <param name="pFI">Fecha inicio. DateTime</param>
+        /// <param name="pFF">Fecha fin. DateTime</param>
+        /// <param name="pNombre">Nombre del jugador. String</param>
+        /// <param name="pPalabra">Palabra que se intentaba adivinar. String</param>
+        /// <param name="pResultado">Resultado. false derrota, true victoria.</param>
         public Partida(DateTime pFI, DateTime pFF, string pNombre, string pPalabra, bool pResultado)
         {
             this.fechaInicio = pFI;
@@ -34,6 +50,7 @@ namespace ej03
             listaPartidas.Sort((x, y) => x.duracion.CompareTo(y.duracion));
         }
 
+        // getters y setters
         public DateTime FechaInicio
         {
             get { return this.fechaInicio; }
@@ -59,6 +76,10 @@ namespace ej03
             get { return this.duracion; }
         }
 
+        /// <summary>
+        /// Selecciona las 5 (como máximo) partidas victoriosas con la menor duracion.
+        /// </summary>
+        /// <returns>Devuelve una List<> de Partidas.</returns>
         public static List<Partida> filtrarParaElTop5()
         {
             List<Partida> ret = new List<Partida>();
