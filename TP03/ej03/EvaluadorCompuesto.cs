@@ -6,15 +6,19 @@ using System.Threading.Tasks;
 
 namespace ej03
 {
-    //TODO: implementar constructor, EsValida().
-    class EvaluadorCompuesto
+    //TODO: testear constructor, testear EsValida() en EvaluadorCompuesto.
+    class EvaluadorCompuesto : IEvaluador
     {
-        IList<IEvaluador> iEvaluadores = new List<IEvaluador>();
+        IList<IEvaluador> iEvaluadores;
         public EvaluadorCompuesto()
-        { }
+        {
+            iEvaluadores = new List<IEvaluador>();
+        }
 
         public bool EsValida(SolicitudPrestamo pSolicitud)
-        { }
+        {
+            return iEvaluadores.All(evaluador => evaluador.EsValida(pSolicitud));
+        }
 
         public void AgregarEvaluador(IEvaluador pEvaluador)
         {

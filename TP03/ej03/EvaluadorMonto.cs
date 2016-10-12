@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ej03
 {
-    //TODO: implementar EsVálida() en EvaluadorMonto
+    //TODO: testear EsVálida() en EvaluadorMonto
     public class EvaluadorMonto : IEvaluador
     {
         double iMontoMaximo;
@@ -17,6 +17,10 @@ namespace ej03
         }
 
         public bool EsValida(SolicitudPrestamo pSolicitud)
-        { }
+        {
+            if (pSolicitud.Monto <= iMontoMaximo) return true;
+
+            return false;
+        }
     }
 }

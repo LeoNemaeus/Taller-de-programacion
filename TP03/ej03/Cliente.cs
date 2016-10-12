@@ -37,5 +37,8 @@ namespace ej03
             get { return iTipoCliente; }
             set { iTipoCliente = value; }
         }
+
+        public Empleo Empleo
+        { get { return iEmpleo; } }
     }
 }

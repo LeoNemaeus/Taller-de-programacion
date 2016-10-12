@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ej03
 {
-    //TODO: implementar EsVálida() en EvaluadorEdad
+    //TODO: testear EsVálida() en EvaluadorEdad
     public class EvaluadorEdad : IEvaluador
     {
         int iEdadMinima, iEdadMaxima;
@@ -18,6 +18,14 @@ namespace ej03
         }
 
         public bool EsValida(SolicitudPrestamo pSolicitud)
-        { }
+        {
+            DateTime Edad = Convert.ToDateTime((pSolicitud.Cliente.FechaNacimiento - DateTime.Now));
+            if ((Edad.Year >= iEdadMinima) && (Edad.Year <= iEdadMaxima))
+            {
+                return true;
+            }
+
+            return false;
+        }
     }
 }
