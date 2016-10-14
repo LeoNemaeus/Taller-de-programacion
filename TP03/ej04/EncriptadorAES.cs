@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace ej04
 {
-    class EncriptadorCesar : Encriptador
+    class EncriptadorAES : Encriptador
     {
         private int iDesplazamiento;
-        
-        public EncriptadorCesar(int pDesplazamiento)
+
+        public EncriptadorAES()
         {
 
         }
 
         public override string Encriptar(string pCadena)
         {
-            return pCadena; //TODO: buscar en wikipedia encriptacion cesar
+            return pCadena; //TODO: buscar en wikipedia encriptacion AES
         }
         public override string Desencriptar(string pCadena)
         {

@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace ej03
 {
-    //TODO: testear constructor, testear EsValida() en EvaluadorCompuesto.
     class EvaluadorCompuesto : IEvaluador
     {
         IList<IEvaluador> iEvaluadores;

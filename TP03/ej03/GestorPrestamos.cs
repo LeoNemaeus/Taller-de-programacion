@@ -8,7 +8,6 @@ namespace ej03
 {
     public class GestorPrestamos
     {
-        //TODO: no entiendo nada de GestorPrestamos.
         IDictionary<TipoCliente, IEvaluador> iEvaluadoresPorCliente = new Dictionary<TipoCliente, IEvaluador>();
 
         public GestorPrestamos()
