@@ -15,12 +15,13 @@ namespace ej03
         Empleo iEmpleo;
         TipoCliente iTipoCliente;
 
-        public Cliente(String pNombre, String pApellido, String pFechaNacimiento, Empleo pEmpleo)
+        public Cliente(String pNombre, String pApellido, DateTime pFechaNacimiento, Empleo pEmpleo, TipoCliente pTipoCliente)
         {
             iNombre = pNombre;
             iApellido = pApellido;
-            iFechaNacimiento = Convert.ToDateTime(pFechaNacimiento);
+            iFechaNacimiento = pFechaNacimiento;
             iEmpleo = pEmpleo;
+            iTipoCliente = pTipoCliente;
         }
 
         public String Nombre
