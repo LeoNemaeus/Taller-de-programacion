@@ -13,7 +13,7 @@ namespace ej01
         private double iX, iY;
 
         // constructor: Punto(coordenada X, coordenada Y)
-        // ambos valores deben ser de tipo double
+        // ambos valores deben ser de tipo doublef
         public Punto(double pX, double pY)
         {
             iX = pX;
