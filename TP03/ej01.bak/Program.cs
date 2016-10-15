@@ -4,13 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ej03
+namespace ej01
 {
-    public enum TipoCliente
+    class Program
     {
-        NoCliente,
-        Cliente,
-        ClienteGold,
-        ClientePremium
+        static void Main(string[] args)
+        {
+        }
     }
 }

@@ -4,13 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ej03
+namespace ej01
 {
-    public enum TipoCliente
+    class Gato
     {
-        NoCliente,
-        Cliente,
-        ClienteGold,
-        ClientePremium
     }
 }
