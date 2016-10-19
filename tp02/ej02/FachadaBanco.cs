@@ -62,7 +62,7 @@ namespace ej02
         /// <returns>Verdadero si el monto es menor que los fondos y el acuerdo, falso sino.</returns>
         public bool debitarSaldoCajaAhorro(double pSaldo)
         {
-            return iCuentaCorriente.DebitarSaldo(pSaldo);
+            return iCajaAhorro.DebitarSaldo(pSaldo);
         }
 
         /// <summary>
@@ -99,6 +99,50 @@ namespace ej02
         public double AcuerdoCuentaCorriente
         {
             get { return iCuentaCorriente.Acuerdo; }
+        }
+
+        /// <summary>
+        /// Permite transferir de la caja de ahorro a la cuenta corriente.
+        /// </summary>
+        /// <param name="pMonto">
+        /// Monto a transferir entre cuentas. El monto no puede superar el saldo
+        /// de la cuenta corriente.
+        /// </param>
+        /// <returns>
+        /// Verdadero si la transferencia fue exitosa, falso sino
+        /// </returns>
+        public bool transferirACuentaCorriente(double pMonto)
+        {
+            if (iCajaAhorro.Saldo >= pMonto &&
+                debitarSaldoCajaAhorro(pMonto))
+            {
+                acreditarSaldoCuentaCorriente(pMonto);
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Permite transferir de la cuenta corriente a la caja de ahorro
+        /// </summary>
+        /// <param name="pMonto">
+        /// Monto a transferir entre cuentas. El monto no puede superar el saldo
+        /// de la caja de ahorro.
+        /// </param>
+        /// <returns>
+        /// Verdadero si la transferencia fue exitosa, falso sino
+        /// </returns>
+        public bool transferirACajaAhorro(double pMonto)
+        {
+            if (iCuentaCorriente.Saldo >= pMonto &&
+                debitarSaldoCuentaCorriente(pMonto))
+            {
+                acreditarSaldoCajaAhorro(pMonto);
+                return true;
+            } else {
+                return false;
+            }
         }
     }
 }

@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace ej03
 {
-    //TODO: testear EsVálida() en EvaluadorEdad
     public class EvaluadorEdad : IEvaluador
     {
         int iEdadMinima, iEdadMaxima;

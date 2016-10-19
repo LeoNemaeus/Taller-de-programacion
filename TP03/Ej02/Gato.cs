@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ej01
+namespace Ej02
 {
-    public class Perro : Animal
+    public class Gato : Animal
     {
         public override void HacerRuido()
         {
-            Console.WriteLine("Sonido del perro: Guau guau guau");
+            Console.WriteLine("Sonido del gato: Miau miau miau");
         }
     }
 }

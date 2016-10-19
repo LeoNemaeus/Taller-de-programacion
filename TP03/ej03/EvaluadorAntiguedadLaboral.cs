@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace ej03
 {
-    //TODO: testear EsVálida() en EvaluadorAntiguedadLaboral
     public class EvaluadorAntiguedadLaboral : IEvaluador
     {
-        int iAntiguedadMinima
+        int iAntiguedadMinima;
 
         public EvaluadorAntiguedadLaboral(int pAntiguedadMinima)
         {

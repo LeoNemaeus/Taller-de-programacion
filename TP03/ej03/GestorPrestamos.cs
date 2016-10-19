@@ -8,9 +8,9 @@ namespace ej03
 {
     public class GestorPrestamos
     {
-        //TODO: no entiendo nada de GestorPrestamos.
         IDictionary<TipoCliente, IEvaluador> iEvaluadoresPorCliente = new Dictionary<TipoCliente, IEvaluador>();
 
+        //TODO remover código redundante para cargar el diccionario.
         public GestorPrestamos()
         {
             EvaluadorCompuesto mEvaluador;
@@ -59,9 +59,16 @@ namespace ej03
             iEvaluadoresPorCliente.Add(TipoCliente.ClientePlatinum, mEvaluador);
         }
 
-        public Boolean EsValida(SolicitudPrestamo pSolicitud)
+        public bool EsValida(SolicitudPrestamo pSolicitud)
         {
-            return iEvaluadoresPorCliente[pSolicitud.Cliente.TipoCliente].EsValida(pSolicitud);
+            bool mEsValida = false;
+
+            if (iEvaluadoresPorCliente.ContainsKey(pSolicitud.Cliente.TipoCliente))
+            {
+                mEsValida = iEvaluadoresPorCliente[pSolicitud.Cliente.TipoCliente].EsValida(pSolicitud);
+            }
+
+            return mEsValida;
         }
     }
 }

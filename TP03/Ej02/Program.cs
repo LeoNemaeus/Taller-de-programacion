@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ej01
+namespace Ej02
 {
     class Program
     {
@@ -12,7 +12,7 @@ namespace ej01
         {
             Veterinaria veterinaria = new Veterinaria();
 
-            veterinaria.AceptarAnimales(new Animal[] { new Perro(), new Gato() });
+            veterinaria.AceptarAnimales(new Animal[] { new Perro(), new Gato(), new Pollito(), new Pato(), new Vaca() });
         }
     }
 

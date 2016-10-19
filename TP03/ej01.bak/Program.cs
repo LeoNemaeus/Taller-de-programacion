@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace ej01
 {
-    public class Perro : Animal
+    class Program
     {
-        public override void HacerRuido()
+        static void Main(string[] args)
         {
-            Console.WriteLine("Sonido del perro: Guau guau guau");
         }
     }
 }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ej01
+namespace Ej02
 {
     class Veterinaria
     {
