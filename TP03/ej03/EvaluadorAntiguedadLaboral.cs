@@ -8,7 +8,7 @@ namespace ej03
 {
     public class EvaluadorAntiguedadLaboral : IEvaluador
     {
-        int iAntiguedadMinima
+        int iAntiguedadMinima;
 
         public EvaluadorAntiguedadLaboral(int pAntiguedadMinima)
         {

@@ -8,15 +8,28 @@ namespace ej03
 {
     class EvaluadorCompuesto : IEvaluador
     {
-        IList<IEvaluador> iEvaluadores;
+        private readonly IList<IEvaluador> iEvaluadores = new List<IEvaluador>();
         public EvaluadorCompuesto()
         {
-            iEvaluadores = new List<IEvaluador>();
         }
 
         public bool EsValida(SolicitudPrestamo pSolicitud)
         {
             return iEvaluadores.All(evaluador => evaluador.EsValida(pSolicitud));
+
+            /*
+             * ALTERNATIVA:
+             * 
+             * bool esValida = true;
+             * IEnumerator<IEvaluator> enumerador = iEvaluadores.GetEnumerator();
+             * 
+             * while (esValida && enumerador.MoveNext())
+             * {
+             *  esValida = enumerador.Current.EsValida(pSolicitud);
+             * }
+             * 
+             * return esValida;
+             */
         }
 
         public void AgregarEvaluador(IEvaluador pEvaluador)

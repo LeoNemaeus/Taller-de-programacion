@@ -21,13 +21,15 @@ namespace ej02
                 Console.Clear();
                 Console.WriteLine("Gestión de cuentas - ingrese una opción:");
                 Console.WriteLine("a - Acreditar saldo a caja de ahorro");
-                Console.WriteLine("b - Debitar saldo a caja de ahorro");
-                Console.WriteLine("c - Acreditar saldo a cuenta corriente");
+                Console.WriteLine("b - Acreditar saldo a cuenta corriente");
+                Console.WriteLine("c - Debitar saldo a caja de ahorro");
                 Console.WriteLine("d - Debitar saldo a cuenta corriente");
-                Console.WriteLine("e - Consultar saldo caja de ahorro");
-                Console.WriteLine("f - Consultar saldo cuenta corriente");
-                Console.WriteLine("g - Consultar acuerdo caja de ahorro");
-                Console.WriteLine("h - Consultar acuerdo cuenta corriente");
+                Console.WriteLine("e - Transferir a caja de ahorro");
+                Console.WriteLine("f - Transferir a cuenta corriente");
+                Console.WriteLine("g - Consultar saldo caja de ahorro");
+                Console.WriteLine("h - Consultar saldo cuenta corriente");
+                Console.WriteLine("i - Consultar acuerdo caja de ahorro");
+                Console.WriteLine("j - Consultar acuerdo cuenta corriente");
                 Console.WriteLine("q - Salir");
 
                 opción = Console.ReadLine();
@@ -50,6 +52,18 @@ namespace ej02
                     //Debitar saldo a caja de ahorro
                     case "b":
                         Console.Clear();
+                        Console.WriteLine("Gestión de cuentas - acreditar saldo a cuenta corriente:");
+
+                        Console.Write("Ingrese el monto que desea acreditar: ");
+                        x = Convert.ToDouble(Console.ReadLine());
+                        ctrl.acreditarSaldoCuentaCorriente(x);
+                        Console.WriteLine("${0} acreditados", x);
+
+                        Console.Write("Presione una tecla para continuar...");
+                        Console.ReadKey();
+                        break;
+                    case "c":
+                        Console.Clear();
                         Console.WriteLine("Gestión de cuentas - debitar saldo a caja de ahorro:");
 
                         Console.Write("Ingrese el monto que desea debitar: ");
@@ -64,7 +78,6 @@ namespace ej02
                         Console.Write("Presione una tecla para continuar...");
                         Console.ReadKey();
                         break;
-                    // Acreditar saldo a cuenta corriente
                     case "c":
                         Console.Clear();
                         Console.WriteLine("Gestión de cuentas - acreditar saldo a cuenta corriente:");
@@ -77,7 +90,6 @@ namespace ej02
                         Console.Write("Presione una tecla para continuar...");
                         Console.ReadKey();
                         break;
-                    // Debitar saldo a cuenta corriente
                     case "d":
                         Console.Clear();
                         Console.WriteLine("Gestión de cuentas - debitar saldo a cuenta corriente:");
@@ -97,6 +109,38 @@ namespace ej02
                     // Consultar saldo caja de ahorro
                     case "e":
                         Console.Clear();
+                        Console.WriteLine("Gestión de cuentas - transferir a caja de ahorro:");
+
+                        Console.Write("Ingrese el monto que desea transferir: ");
+                        x = Convert.ToDouble(Console.ReadLine());
+                        if (ctrl.transferirACajaAhorro(x))
+                        {
+                            Console.WriteLine("${0} transferidos de la cuenta corriente a la caja de ahorro", x);
+                        } else {
+                            Console.WriteLine("Error: el monto supera la capacidad de transferencia");
+                        }
+
+                        Console.Write("Presione una tecla para continuar...");
+                        Console.ReadKey();
+                        break;
+                    case "f":
+                        Console.Clear();
+                        Console.WriteLine("Gestión de cuentas - transferir a cuenta corriente:");
+
+                        Console.Write("Ingrese el monto que desea transferir: ");
+                        x = Convert.ToDouble(Console.ReadLine());
+                        if (ctrl.transferirACuentaCorriente(x))
+                        {
+                            Console.WriteLine("${0} transferidos de la caja de ahorro a la cuenta corriente", x);
+                        } else {
+                            Console.WriteLine("Error: el monto supera la capacidad de transferencia");
+                        }
+
+                        Console.Write("Presione una tecla para continuar...");
+                        Console.ReadKey();
+                        break;
+                    case "g":
+                        Console.Clear();
                         Console.WriteLine("Gestión de cuentas - consultar saldo caja de ahorro:");
 
                         Console.WriteLine("Saldo caja de ahorro: ${0}", ctrl.SaldoCajaAhorro);
@@ -104,7 +148,6 @@ namespace ej02
                         Console.Write("Presione una tecla para continuar...");
                         Console.ReadKey();
                         break;
-                    // Consultar saldo cuenta corriente
                     case "f":
                         Console.Clear();
                         Console.WriteLine("Gestión de cuentas - consultar saldo cuenta corriente:");
@@ -114,7 +157,6 @@ namespace ej02
                         Console.Write("Presione una tecla para continuar...");
                         Console.ReadKey();
                         break;
-                    //Consultar acuerdo caja de ahorro
                     case "g":
                         Console.Clear();
                         Console.WriteLine("Gestión de cuentas - consultar acuerdo caja de ahorro:");
@@ -124,7 +166,6 @@ namespace ej02
                         Console.Write("Presione una tecla para continuar...");
                         Console.ReadKey();
                         break;
-                    //Consultar acuerdo cuenta corriente
                     case "h":
                         Console.Clear();
                         Console.WriteLine("Gestión de cuentas - consultar acuerdo cuenta corriente:");
