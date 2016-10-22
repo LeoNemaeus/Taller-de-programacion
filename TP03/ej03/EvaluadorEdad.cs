@@ -19,8 +19,12 @@ namespace ej03
 
         public bool EsValida(SolicitudPrestamo pSolicitud)
         {
-            DateTime Edad = Convert.ToDateTime((pSolicitud.Cliente.FechaNacimiento - DateTime.Now));
-            if ((Edad.Year >= iEdadMinima) && (Edad.Year <= iEdadMaxima))
+            DateTime mFechaNacimiento = pSolicitud.Cliente.FechaNacimiento;
+
+            DateTime aux1 = DateTime.Today.AddYears(-iEdadMinima);
+            DateTime aux2 = DateTime.Today.AddYears(-iEdadMaxima);
+
+            if ((DateTime.Compare(mFechaNacimiento, aux1) <= 0 ) && (DateTime.Compare(mFechaNacimiento, aux2)) >= 0 )
             {
                 return true;
             }

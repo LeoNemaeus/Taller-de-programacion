@@ -4,8 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
+//UNDONE: documentar solicitudprestamo
+
 namespace ej03
 {
+    /// <summary>
+    /// Contiene una solicitud de préstamo, conformada por un cliente, monto y cantidad de cuotas.
+    /// </summary>
     public class SolicitudPrestamo
     {
         double iMonto;

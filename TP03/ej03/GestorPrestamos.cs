@@ -56,7 +56,7 @@ namespace ej03
             mEvaluador.AgregarEvaluador(new EvaluadorMonto(200000));
             mEvaluador.AgregarEvaluador(new EvaluadorCantidadCuotas(60));
 
-            iEvaluadoresPorCliente.Add(TipoCliente.ClientePlatinum, mEvaluador);
+            iEvaluadoresPorCliente.Add(TipoCliente.ClientePremium, mEvaluador);
         }
 
         public bool EsValida(SolicitudPrestamo pSolicitud)

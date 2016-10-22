@@ -18,8 +18,7 @@ namespace ej03
 
         public bool EsValida(SolicitudPrestamo pSolicitud)
         {
-            if (pSolicitud.Cliente.Empleo.Sueldo <= iSueldoMinimo)
-                return true;
+            if (pSolicitud.Cliente.Empleo.Sueldo >= iSueldoMinimo) return true;
 
             return false;
         }

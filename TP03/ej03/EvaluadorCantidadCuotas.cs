@@ -18,7 +18,7 @@ namespace ej03
 
         public bool EsValida(SolicitudPrestamo pSolicitud)
         {
-            if (pSolicitud.Monto <= iCantidadMaximaCuotas)
+            if (pSolicitud.CantidadCuotas <= iCantidadMaximaCuotas)
                 return true;
 
             return false;
