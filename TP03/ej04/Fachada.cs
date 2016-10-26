@@ -8,9 +8,19 @@ namespace ej04
 {
     class Fachada
     {
-        public static FabricaEncriptadores instanciar()
+        public static FabricaEncriptadores instanciarFabrica()
         {
             return FabricaEncriptadores.Instancia;
+        }
+
+        internal static void Encriptar(string v)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal static void Desencriptar(string v)
+        {
+            throw new NotImplementedException();
         }
     }
 }

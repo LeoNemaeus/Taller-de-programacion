@@ -12,11 +12,22 @@ namespace ej04
 
         private static readonly Lazy<FabricaEncriptadores> cinstancia = new Lazy<FabricaEncriptadores>(() => new FabricaEncriptadores());
 
+        private readonly EncriptadorNulo iEncriptadorNulo = new EncriptadorNulo();
+
         private FabricaEncriptadores()
         {
-            iEncriptadores.Add("César", new EncriptadorCesar(3));
-            iEncriptadores.Add("AES", new EncriptadorAES());
-            iEncriptadores.Add("Nulo", new EncriptadorNulo());
+            //Encriptador encriptador = new EncriptadorCesar(3);
+
+            //iEncriptadores.Add(encriptador.Nombre, encriptador);
+
+            //encriptador = new EncriptadorAES();
+
+            //iEncriptadores.Add(encriptador.Nombre, encriptador);
+
+            foreach (Encriptador encriptador in new Encriptador[] { new EncriptadorCesar(3), new EncriptadorAES() })
+            {
+                this.iEncriptadores.Add(encriptador.Nombre, encriptador);
+            }
         }
 
         public static FabricaEncriptadores Instancia
@@ -26,7 +37,14 @@ namespace ej04
 
         public IEncriptador GetEncriptadores(string nombre)
         {
-            return iEncriptadores[nombre];
+            IEncriptador encriptador = this.iEncriptadorNulo;
+
+            if (this.iEncriptadores.ContainsKey(nombre))
+            {
+                encriptador = this.iEncriptadores[nombre];
+            }
+
+            return encriptador;
         }
     }
 }
