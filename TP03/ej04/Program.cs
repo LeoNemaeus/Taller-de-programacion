@@ -10,7 +10,7 @@ namespace ej04
     {
         static void Main(string[] args)
         {
-            Shell.iniciar();
+            Shell.iniciar(); // inicia el programa
         }
     }
 }

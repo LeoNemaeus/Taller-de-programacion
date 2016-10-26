@@ -26,7 +26,7 @@ namespace ej04
 
             foreach (Encriptador encriptador in new Encriptador[] { new EncriptadorCesar(3), new EncriptadorAES() })
             {
-                this.iEncriptadores.Add(encriptador.Nombre, encriptador);
+                this.iEncriptadores.Add(encriptador.Nombre, encriptador); // iniciamos los encriptadores
             }
         }
 
@@ -39,7 +39,7 @@ namespace ej04
         {
             IEncriptador encriptador = this.iEncriptadorNulo;
 
-            if (this.iEncriptadores.ContainsKey(nombre))
+            if (this.iEncriptadores.ContainsKey(nombre)) // esto esta bien asi, no lo toquen, lo hizo el profe
             {
                 encriptador = this.iEncriptadores[nombre];
             }

@@ -10,7 +10,7 @@ namespace ej04
     {
         public static void iniciar()
         {
-            Fachada.instanciarFabrica();
+            //Fachada.instanciarFabrica(); esto no va
             Console.WriteLine("============ ENCRIPTOMATICO ============");
             Console.WriteLine("\n1) Encriptar Cesar\n2) Desencriptar Cesar");
 
@@ -18,6 +18,8 @@ namespace ej04
             switch (opcion)
             {
                 case 1: Fachada.Encriptar("César");
+                    // aca hay que hacer un menu, hay que pasar como parametro
+                    // la palabra a encriptar o desencriptar, el encriptador, y si se quiere encrip o desencrip
                     break;
                 case 2: Fachada.Desencriptar("César");
                     break;
