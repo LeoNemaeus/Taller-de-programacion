@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace ej03
 {
-    //TODO: implementar EsVálida() en EvaluadorSueldo
     public class EvaluadorSueldo : IEvaluador
     {
         double iSueldoMinimo;

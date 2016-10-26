@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-//TODO: LINEAMIENTOS GENERALES: usar controlador fachada para exponer la funcionalidad del sistema.
 
 /*
  *  - Existen cuatro tipos de clientes, siendo los mismos de menor a mayor categoría No Cliente, Cliente, Cliente Gold y Cliente Platinum.

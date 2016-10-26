@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace ej03
 {
-    //TODO: testear EsVálida() en CantidadCuotas
     public class EvaluadorCantidadCuotas : IEvaluador
     {
         int iCantidadMaximaCuotas;

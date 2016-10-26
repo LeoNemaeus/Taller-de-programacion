@@ -11,6 +11,6 @@ namespace ej03
         NoCliente,
         Cliente,
         ClienteGold,
-        ClientePlatinum
+        ClientePremium
     }
 }
