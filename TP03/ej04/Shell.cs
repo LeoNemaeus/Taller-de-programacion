@@ -8,5 +8,9 @@ namespace ej04
 {
     class Shell
     {
+        public static void instanciar()
+        {
+            Fachada.instanciar();
+        }
     }
 }

@@ -8,9 +8,7 @@ namespace ej04
 {
     class EncriptadorAES : Encriptador
     {
-        private int iDesplazamiento;
-
-        public EncriptadorAES()
+        public EncriptadorAES() : base("AES")
         {
 
         }

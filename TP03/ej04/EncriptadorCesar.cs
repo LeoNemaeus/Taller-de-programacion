@@ -26,6 +26,7 @@ namespace ej04
 
         public EncriptadorCesar(int pDesplazamiento) : base("César")
         {
+            iDesplazamiento = pDesplazamiento;
         }
 
         public override string Encriptar(string pCadena)
