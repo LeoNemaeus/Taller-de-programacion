@@ -12,7 +12,10 @@ namespace ej04
 
         private static readonly Lazy<FabricaEncriptadores> cinstancia = new Lazy<FabricaEncriptadores>(() => new FabricaEncriptadores());
 
-        private FabricaEncriptadores() { }
+        private FabricaEncriptadores()
+        {
+
+        }
 
         public static FabricaEncriptadores Instancia
         {
