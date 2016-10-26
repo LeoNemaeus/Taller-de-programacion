@@ -8,13 +8,15 @@ namespace ej04
 {
     class FabricaEncriptadores
     {
-        private Dictionary<string,IEncriptador> iEncriptadores;
+        private Dictionary<string, IEncriptador> iEncriptadores;
 
         private static readonly Lazy<FabricaEncriptadores> cinstancia = new Lazy<FabricaEncriptadores>(() => new FabricaEncriptadores());
 
         private FabricaEncriptadores()
         {
-
+            iEncriptadores.Add("César", new EncriptadorCesar(3));
+            iEncriptadores.Add("AES", new EncriptadorAES());
+            iEncriptadores.Add("Nulo", new EncriptadorNulo());
         }
 
         public static FabricaEncriptadores Instancia
@@ -22,7 +24,10 @@ namespace ej04
             get { return cinstancia.Value; }
         }
 
-
+        public IEncriptador GetEncriptadores(string nombre)
+        {
+            return iEncriptadores[nombre];
+        }
     }
 }
  
