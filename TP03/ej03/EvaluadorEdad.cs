@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace ej03
 {
-    //TODO: testear EsVálida() en EvaluadorEdad
+    /// <summary>
+    /// Permite establecer límites de edad para una solicitud.
+    /// Verifica que una solicitud cumpla estos límites.
+    /// </summary>
     public class EvaluadorEdad : IEvaluador
     {
         int iEdadMinima, iEdadMaxima;

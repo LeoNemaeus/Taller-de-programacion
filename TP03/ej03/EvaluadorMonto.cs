@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace ej03
 {
-    //TODO: testear EsVálida() en EvaluadorMonto
+    /// <summary>
+    /// Premite definir el monto máximo que permitirá un evaluador. Valida una solicitud.
+    /// </summary>
     public class EvaluadorMonto : IEvaluador
     {
         double iMontoMaximo;

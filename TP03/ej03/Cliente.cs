@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-// TODO: iEmpleo debería ser una lista? por la composición viteh.
-
 namespace ej03
 {
+    /// <summary>
+    /// Representa un cliente. Mantiene el nombre y apellido, fecha de nacimiento, empleo y el tipo del cliente.
+    /// </summary>
     public class Cliente
     {
         String iNombre, iApellido;

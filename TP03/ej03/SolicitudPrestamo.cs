@@ -4,20 +4,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
-//UNDONE: documentar solicitudprestamo
-
 namespace ej03
 {
     /// <summary>
     /// Contiene una solicitud de préstamo, conformada por un cliente, monto y cantidad de cuotas.
+    /// 
     /// </summary>
     public class SolicitudPrestamo
     {
         double iMonto;
         int iCantidadCuotas;
         Cliente iCliente;
-
+        /// <summary>
+        /// Crea una solicitud de préstamo mediante un cliente, monto y cantidad de cuotas
+        /// </summary>
+        /// <param name="pCliente"></param>
+        /// <param name="pMonto"></param>
+        /// <param name="pCantidadCuotas"></param>
         public SolicitudPrestamo(Cliente pCliente, double pMonto, int pCantidadCuotas)
         {
             iCliente = pCliente;

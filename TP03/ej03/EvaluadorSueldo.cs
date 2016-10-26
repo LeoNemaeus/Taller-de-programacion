@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace ej03
 {
-    //TODO: implementar EsVálida() en EvaluadorSueldo
+    /// <summary>
+    /// Permite establecer un sueldo mínimo para el empleo de un cliente.
+    /// Verifica que el cliente asociado a una solicitud cumpla este mínimo.
+    /// </summary>
     public class EvaluadorSueldo : IEvaluador
     {
         double iSueldoMinimo;

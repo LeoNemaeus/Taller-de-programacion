@@ -13,7 +13,6 @@ namespace ej04
 
         public Encriptador(string pNombre)
         {
-            //TODO: que va aca?
         }
         public string Nombre
         {

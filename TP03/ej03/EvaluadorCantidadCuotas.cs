@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace ej03
 {
-    //TODO: testear EsVálida() en CantidadCuotas
+    /// <summary>
+    /// Permite definir el número máxmo de cuotas para un evaluador.
+    /// Verifica que una solicitud de préstamo cumpla con el número de cuotas definido por el evaluador.
+    /// </summary>
     public class EvaluadorCantidadCuotas : IEvaluador
     {
         int iCantidadMaximaCuotas;
