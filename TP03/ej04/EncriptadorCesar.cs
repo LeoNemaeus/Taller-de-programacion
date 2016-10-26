@@ -26,13 +26,14 @@ namespace ej04
 
         public EncriptadorCesar(int pDesplazamiento) : base("César")
         {
+            iDesplazamiento = pDesplazamiento;
         }
 
         public override string Encriptar(string pCadena)
         {
 
             int desplazamiento = iDesplazamiento;
-            String cifrado = "";
+            string cifrado = "";
             if (desplazamiento > 0 && desplazamiento < pCadena.Length)
             {
                 for (int i = 0; i < pCadena.Length; i++)

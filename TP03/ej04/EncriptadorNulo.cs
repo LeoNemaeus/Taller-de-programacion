@@ -8,7 +8,7 @@ namespace ej04
 {
     class EncriptadorNulo : Encriptador
     {
-        public EncriptadorNulo()
+        public EncriptadorNulo ():
         {
 
         }
