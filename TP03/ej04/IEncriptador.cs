@@ -10,5 +10,7 @@ namespace ej04
     {
         string Encriptar(string pCadena);
         string Desencriptar(string pCadena);
+
+        
     }
 }

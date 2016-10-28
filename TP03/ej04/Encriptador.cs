@@ -7,12 +7,14 @@ using System.Threading.Tasks;
 namespace ej04
 {
     // implementa IEncriptador
-    class Encriptador : IEncriptador
+    abstract class Encriptador : IEncriptador
     {
         private string iNombre;
 
         public Encriptador(string pNombre)
         {
+            iNombre = pNombre;
+            //TODO: que va aca?
         }
         public string Nombre
         {
@@ -21,11 +23,11 @@ namespace ej04
         }
 
         // las que se van a heredar
-        public string Encriptar(string pCadena)
+        public virtual string Encriptar(string pCadena)
         {
             return pCadena;
         }
-        public string Desencriptar(string pCadena)
+        public virtual string Desencriptar(string pCadena)
         {
             return pCadena;
         }

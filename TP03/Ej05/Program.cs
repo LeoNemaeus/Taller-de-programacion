@@ -4,13 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ej01
+namespace Ej05
 {
-    public class Perro : Animal
+    class Program
     {
-        public override void HacerRuido()
+        static void Main(string[] args)
         {
-            Console.WriteLine("Sonido del perro: Guau guau guau");
         }
     }
 }
