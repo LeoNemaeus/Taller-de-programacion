@@ -10,7 +10,9 @@ namespace ej04
     {
         static void Main(string[] args)
         {
-            String iCadena, iCadenaEncriptada = "";
+            Shell.iniciar();
+
+            /*String iCadena, iCadenaEncriptada = "";
             Controlador controller = new Controlador();
             Console.WriteLine("Encriptar(1), Desencriptar(2), Salir(3)");
             int opcion = Convert.ToInt32(Console.ReadLine());
@@ -54,7 +56,7 @@ namespace ej04
                 Console.WriteLine("Encriptar(1), Desencriptar(2), Salir(3)");
                 opcion = Convert.ToInt32(Console.ReadLine());
             }
-
+            */
 
         }
     }
