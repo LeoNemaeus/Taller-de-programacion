@@ -14,6 +14,9 @@ namespace ej04
 
         private FabricaEncriptadores()
         {
+            iEncriptadores.Add("César", new EncriptadorCesar(3));
+            iEncriptadores.Add("AES", new EncriptadorAES());
+            iEncriptadores.Add("Nulo", new EncriptadorNulo());
 
         }
 
