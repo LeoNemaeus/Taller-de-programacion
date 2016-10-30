@@ -10,10 +10,6 @@ namespace ej01
     {
         static void Main(string[] args)
         {
-            Veterinaria veterinaria = new Veterinaria();
-
-            veterinaria.AceptarAnimales(new Animal[] {new Perro(), new Gato() });
         }
     }
-
 }

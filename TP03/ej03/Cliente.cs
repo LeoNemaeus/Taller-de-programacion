@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
 namespace ej03
 {
+    /// <summary>
+    /// Representa un cliente. Mantiene el nombre y apellido, fecha de nacimiento, empleo y el tipo del cliente.
+    /// </summary>
     public class Cliente
     {
         String iNombre, iApellido;

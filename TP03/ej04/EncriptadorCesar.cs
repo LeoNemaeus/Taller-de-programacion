@@ -33,7 +33,7 @@ namespace ej04
         {
 
             int desplazamiento = iDesplazamiento;
-            String cifrado = "";
+            string cifrado = "";
             if (desplazamiento > 0 && desplazamiento < pCadena.Length)
             {
                 for (int i = 0; i < pCadena.Length; i++)

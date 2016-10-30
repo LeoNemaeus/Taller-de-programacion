@@ -6,10 +6,13 @@ using System.Threading.Tasks;
 
 namespace ej03
 {
+    /// <summary>
+    /// Mantiene el sueldo y la fecha de ingreso de un empleo.
+    /// </summary>
     public class Empleo
     {
-        double iSueldo;
-        DateTime iFechaIngreso;
+        readonly double iSueldo;
+        readonly DateTime iFechaIngreso;
 
         public Empleo(double pSueldo, DateTime pFechaIngreso)
         {

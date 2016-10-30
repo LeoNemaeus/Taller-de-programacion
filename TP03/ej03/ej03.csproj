@@ -58,6 +58,7 @@
     <Compile Include="EvaluadorSueldo.cs" />
     <Compile Include="GestorPrestamos.cs" />
     <Compile Include="IEvaluador.cs" />
+    <Compile Include="Prestamos.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SolicitudPrestamo.cs" />

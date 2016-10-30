@@ -4,16 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ej01
+namespace Ej05
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Veterinaria veterinaria = new Veterinaria();
-
-            veterinaria.AceptarAnimales(new Animal[] {new Perro(), new Gato() });
         }
     }
-
 }

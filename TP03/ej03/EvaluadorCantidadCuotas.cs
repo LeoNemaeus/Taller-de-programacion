@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace ej03
 {
+    /// <summary>
+    /// Permite definir el número máxmo de cuotas para un evaluador.
+    /// Verifica que una solicitud de préstamo cumpla con el número de cuotas definido por el evaluador.
+    /// </summary>
     public class EvaluadorCantidadCuotas : IEvaluador
     {
         int iCantidadMaximaCuotas;
@@ -17,7 +21,7 @@ namespace ej03
 
         public bool EsValida(SolicitudPrestamo pSolicitud)
         {
-            if (pSolicitud.Monto <= iCantidadMaximaCuotas)
+            if (pSolicitud.CantidadCuotas <= iCantidadMaximaCuotas)
                 return true;
 
             return false;
