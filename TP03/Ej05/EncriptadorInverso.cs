@@ -8,9 +8,10 @@ namespace Ej05
 {
     public class EncriptadorInverso : Encriptador
     {
-        public EncriptadorInverso () base : ("Inverso") ()
 
-        public override string Encriptar (string pCadena)
+        public EncriptadorInverso() : base("Inverso") { }
+
+        public override string Encriptar(string pCadena)
 
         {
             char[] array = pCadena.ToCharArray();
@@ -23,7 +24,8 @@ namespace Ej05
         {
             char[] array = pCadena.ToCharArray();
             Array.Reverse(array);
-            return new string (array);
+            return new string(array);
         }
     }
+
 }

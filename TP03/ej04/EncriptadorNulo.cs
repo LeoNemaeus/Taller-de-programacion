@@ -8,10 +8,7 @@ namespace ej04
 {
     class EncriptadorNulo : Encriptador
     {
-        public EncriptadorNulo ():
-        {
-
-        }
+        public EncriptadorNulo() : base("Nulo") { }
 
         public override string Encriptar(string pCadena)
         {
