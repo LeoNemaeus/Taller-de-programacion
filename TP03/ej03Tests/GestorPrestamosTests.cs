@@ -1,4 +1,4 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ej03;
 using System;
 using System.Collections.Generic;
@@ -11,6 +11,9 @@ namespace ej03.Tests
     [TestClass()]
     public class GestorPrestamosTests
     {
+        /// <summary>
+        /// Prueba la creaci�n de iGestor.
+        /// </summary>
         GestorPrestamos iGestor;
         [TestMethod()]
         public void GestorPrestamosTest()
@@ -19,45 +22,41 @@ namespace ej03.Tests
             Assert.IsNotNull(iGestor);
         }
 
+        /// <summary>
+        /// Prueba que se valide adecuadamente cada tipo de cliente.
+        /// </summary>
         [TestMethod()]
         public void EsValidaTest()
         {
-            //UNDONE crear solicitudes con distintos clientes
-            //TODO armar arreglo con las sollicitudes
-            IList<SolicitudPrestamo> SolicitudesValidas = new List<SolicitudPrestamo>();
-            IList<SolicitudPrestamo> SolicitudesInvalidas = new List<SolicitudPrestamo>();
+            iGestor = new GestorPrestamos();
+            IList<SolicitudPrestamo> Solicitudes = new List<SolicitudPrestamo>();
 
-            //Weas válidas
-            SolicitudesValidas.Add(armarSolicitud("Ned", "Ludd", new DateTime(1988, 05, 12), 6500, new DateTime(2005, 02, 12), 3000, 6, TipoCliente.NoCliente));
-            SolicitudesValidas.Add(armarSolicitud("Ned", "Ludd", new DateTime(1988, 05, 12), 6500, new DateTime(2005, 02, 12), 3000, 6, TipoCliente.Cliente));
-            SolicitudesValidas.Add(armarSolicitud("Ned", "Ludd", new DateTime(1988, 05, 12), 6500, new DateTime(2005, 02, 12), 3000, 6, TipoCliente.ClienteGold));
-            SolicitudesValidas.Add(armarSolicitud("Ned", "Ludd", new DateTime(1988, 05, 12), 6500, new DateTime(2005, 02, 12), 3000, 6, TipoCliente.ClientePremium));
-            SolicitudesValidas.Add(armarSolicitud("Ned", "Ludd", new DateTime(1988, 05, 12), 6500, new DateTime(2005, 02, 12), 3000, 6, TipoCliente.NoCliente));
+            Solicitudes.Add(armarSolicitud("Ned", "Ludd", new DateTime(1988, 05, 12), 5000, new DateTime(2005, 02, 12), 20000, 12, TipoCliente.NoCliente));
+            Solicitudes.Add(armarSolicitud("Ned", "Ludd", new DateTime(1988, 05, 12), 6500, new DateTime(2005, 02, 12), 100000, 32, TipoCliente.Cliente));
+            Solicitudes.Add(armarSolicitud("Ned", "Ludd", new DateTime(1988, 05, 12), 6500, new DateTime(2005, 02, 12), 150000, 60, TipoCliente.ClienteGold));
+            Solicitudes.Add(armarSolicitud("Ned", "Ludd", new DateTime(1988, 05, 12), 6500, new DateTime(2005, 02, 12), 200000, 60, TipoCliente.ClientePremium));
 
-            //Weas no válidas
-            SolicitudesInvalidas.Add(armarSolicitud("Ned", "Ludd", new DateTime(2005, 05, 12), 6500, new DateTime(2005, 02, 12), 3000, 6, TipoCliente.NoCliente));
-            SolicitudesInvalidas.Add(armarSolicitud("Ned", "Ludd", new DateTime(1988, 05, 12), 1500, new DateTime(2005, 02, 12), 3000, 6, TipoCliente.NoCliente));
-            SolicitudesValidas.Add(armarSolicitud("Ned", "Ludd", new DateTime(1988, 05, 12), 6500, new DateTime(2016, 05, 12), 3000, 6, TipoCliente.NoCliente));
-            SolicitudesValidas.Add(armarSolicitud("Ned", "Ludd", new DateTime(1988, 05, 12), 6500, new DateTime(2005, 02, 12), 25000, 6, TipoCliente.NoCliente));
-            SolicitudesValidas.Add(armarSolicitud("Ned", "Ludd", new DateTime(1988, 05, 12), 6500, new DateTime(2005, 02, 12), 3000, 32, TipoCliente.NoCliente));
-            SolicitudesValidas.Add(armarSolicitud("Ned", "Ludd", new DateTime(1988, 05, 12), 6500, new DateTime(2005, 02, 12), 150000, 6, TipoCliente.Cliente));
-            SolicitudesValidas.Add(armarSolicitud("Ned", "Ludd", new DateTime(1988, 05, 12), 6500, new DateTime(2005, 02, 12), 3000, 100, TipoCliente.NoCliente));
-            SolicitudesValidas.Add(armarSolicitud("Ned", "Ludd", new DateTime(1988, 05, 12), 6500, new DateTime(2005, 02, 12), 3000, 6, TipoCliente.Cliente));
-
-
-            foreach (var solicitud in SolicitudesValidas)
-            {
+            foreach (SolicitudPrestamo solicitud in Solicitudes) {
+                Console.WriteLine("Cliente: {0}, {1}", solicitud.Cliente.FechaNacimiento, solicitud.Cliente.TipoCliente);
+                Console.WriteLine("Empleo: {0}; {1}", solicitud.Cliente.Empleo.Sueldo, solicitud.Cliente.Empleo.FechaIngreso);
+                Console.WriteLine("Solicitud: {0}; {1}", solicitud.Monto, solicitud.CantidadCuotas);
                 Assert.IsTrue(iGestor.EsValida(solicitud));
             }
 
-            foreach (var solicitud in SolicitudesInvalidas)
-            {
-                Assert.IsFalse(iGestor.EsValida(solicitud));
-            }
-
-
         }
 
+        /// <summary>
+        /// Helper para crear solicitudes.
+        /// </summary>
+        /// <param name="pNombre"></param>
+        /// <param name="pApellido"></param>
+        /// <param name="pFechaNacimiento"></param>
+        /// <param name="pSueldo"></param>
+        /// <param name="pFechaIngreso"></param>
+        /// <param name="pMonto"></param>
+        /// <param name="pCuotas"></param>
+        /// <param name="pTipoCliente"></param>
+        /// <returns></returns>
         private SolicitudPrestamo armarSolicitud(string pNombre, string pApellido, DateTime pFechaNacimiento, double pSueldo, DateTime pFechaIngreso, double pMonto, int pCuotas, TipoCliente pTipoCliente)
         {
             Empleo mEmpleo = new Empleo(pSueldo, pFechaIngreso);

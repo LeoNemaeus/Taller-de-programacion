@@ -10,7 +10,6 @@ namespace ej03
     {
         IDictionary<TipoCliente, IEvaluador> iEvaluadoresPorCliente = new Dictionary<TipoCliente, IEvaluador>();
 
-        //TODO remover código redundante para cargar el diccionario.
         public GestorPrestamos()
         {
             EvaluadorCompuesto mEvaluador;
@@ -56,9 +55,14 @@ namespace ej03
             mEvaluador.AgregarEvaluador(new EvaluadorMonto(200000));
             mEvaluador.AgregarEvaluador(new EvaluadorCantidadCuotas(60));
 
-            iEvaluadoresPorCliente.Add(TipoCliente.ClientePlatinum, mEvaluador);
+            iEvaluadoresPorCliente.Add(TipoCliente.ClientePremium, mEvaluador);
         }
 
+        /// <summary>
+        /// Verifica que una solicitud cumpla con todas las restricciones necesarias.
+        /// </summary>
+        /// <param name="pSolicitud"></param>
+        /// <returns></returns>
         public bool EsValida(SolicitudPrestamo pSolicitud)
         {
             bool mEsValida = false;
