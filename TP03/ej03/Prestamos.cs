@@ -4,16 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-//UNDONE implementar fachada Prestamos
+//UNDONE fachada Prestamos: debería 
 //TODO documentar Prestamos.
 
 namespace ej03
 {
     class Prestamos
     {
-        bool evaluarSolicitud(string pNombre, string pApellido, DateTime pFechaNacimiento, double pSueldo, DateTime pFechaIngreso, double pMonto, int pCuotas, string pTipoCliente)
+        public bool evaluarSolicitud(string pNombre, string pApellido, DateTime pFechaNacimiento, double pSueldo, DateTime pFechaIngreso, double pMonto, int pCuotas, string pTipoCliente)
         {
             TipoCliente mTipoCliente;
+            GestorPrestamos mGestor = new GestorPrestamos();
 
             switch (pTipoCliente.ToLower())
             {
@@ -43,11 +44,8 @@ namespace ej03
             Empleo mEmpleo = new Empleo(pSueldo, pFechaIngreso);
             Cliente mCliente = new Cliente(pNombre, pApellido, pFechaNacimiento, mEmpleo, mTipoCliente);
             SolicitudPrestamo mSolicitud = new SolicitudPrestamo(mCliente, pMonto, pCuotas);
+
+            return mGestor.EsValida(mSolicitud);
         }
-        void setEvaluadorCuotas() { }
-        void setEvaluadorAntiguedad() { }
-        void setEvaluadorMonto() { }
-        void setEvaluadorSueldo() { }
-        void setEvaluadorEdad() { }
     }
 }

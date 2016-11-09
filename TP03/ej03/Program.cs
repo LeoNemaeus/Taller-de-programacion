@@ -4,9 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
- //TODO: implementar fachada.
- //TODO: implementar interfaz de usuario.
-
 /*
  *  - Existen cuatro tipos de clientes, siendo los mismos de menor a mayor categoría No Cliente, Cliente, Cliente Gold y Cliente Platinum.
  *  - Los requisitos para la solicitud de préstamos son:
@@ -25,6 +22,7 @@ namespace ej03
     {
         static void Main(string[] args)
         {
+            Shell.display();
         }
     }
 }

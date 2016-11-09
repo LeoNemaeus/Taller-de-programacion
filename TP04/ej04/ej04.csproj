@@ -4,15 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0FA960B2-A5BC-467B-BFC7-7BD30B689C0C}</ProjectGuid>
+    <ProjectGuid>{5ABF1E6D-374D-4172-89A2-40781AD6D33E}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ej03</RootNamespace>
-    <AssemblyName>ej03</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <RootNamespace>ej04</RootNamespace>
+    <AssemblyName>ej04</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -34,10 +33,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -49,25 +44,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cliente.cs" />
-    <Compile Include="Empleo.cs" />
-    <Compile Include="EvaluadorAntiguedadLaboral.cs" />
-    <Compile Include="EvaluadorCantidadCuotas.cs" />
-    <Compile Include="EvaluadorCompuesto.cs" />
-    <Compile Include="EvaluadorEdad.cs" />
-    <Compile Include="EvaluadorMonto.cs" />
-    <Compile Include="EvaluadorSueldo.cs" />
-    <Compile Include="GestorPrestamos.cs" />
-    <Compile Include="IEvaluador.cs" />
-    <Compile Include="Prestamos.cs" />
+    <Compile Include="Cuenta.cs" />
+    <Compile Include="Cuentas.cs" />
+    <Compile Include="FachadaBanco.cs" />
+    <Compile Include="MovimientoException.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Shell.cs" />
-    <Compile Include="SolicitudPrestamo.cs" />
-    <Compile Include="TipoCliente.cs" />
+    <Compile Include="TipoDocumento.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
