@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ej04
 {
-    class FabricaEncriptadores
+    public class FabricaEncriptadores
     {
         private Dictionary<string, IEncriptador> iEncriptadores = new Dictionary<string, IEncriptador>();
 

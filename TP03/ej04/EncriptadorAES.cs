@@ -8,7 +8,7 @@ using System.Security.Cryptography;
 
 namespace ej04
 {
-    class EncriptadorAES : Encriptador
+    public class EncriptadorAES : Encriptador
     {
         public EncriptadorAES(): base("AES")
         {

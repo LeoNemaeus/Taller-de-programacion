@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ej04
 {
-    interface IEncriptador
+    public interface IEncriptador
     {
         string Encriptar(string pCadena);
         string Desencriptar(string pCadena);

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ej04
 {
-    class Fachada
+    public class Fachada
     {
         public static FabricaEncriptadores instanciarFabrica()
 

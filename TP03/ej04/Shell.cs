@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ej04
 {
-    class Shell
+    public class Shell
     {
         public static void iniciar()
         {
