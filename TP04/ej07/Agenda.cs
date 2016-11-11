@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-//TODO propiedades, comentar Agenda
+//TODO comentar Agenda
 //DOING definir métodos de Agenda
 namespace ej07
 {

@@ -5,10 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-//TODO excepciones, documentar
-//UNDONE métodos,
+//TODO excepciones, 
+//UNDONE métodos, documentar
 namespace ej07
 {
+    /// <summary>
+    /// Agrupa un conjunto de Eventos y permite manipularlos.
+    /// </summary>
     class Calendario
     {
         string iNombre;
@@ -45,6 +48,6 @@ namespace ej07
             iEventos[pNombre] = pEvento;
         }
 
-        public IList<Evento> obtenerEventos() { } //TODO cómo determinar el criterio?
+        public IList<Evento> obtenerEventos() { } //TODO hacer que use los criterios del patrón filter.
     }
 }

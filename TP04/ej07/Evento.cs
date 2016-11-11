@@ -4,10 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-//TODO documentar
+//TODO uncrappear, documentar
 //UNDONE propiedades
 namespace ej07
 {
+    /// <summary>
+    /// Un Evento de un calendario.
+    /// Las repeticiones se calculan en el service del evento
+    /// </summary>
     public class Evento
     {
         private string iNombre;
@@ -23,6 +27,7 @@ namespace ej07
             this.iFrecuencia = pFrecuencia;
         }
 
+        //Propiedades
         public string Nombre
         {
             get { return this.iNombre; }

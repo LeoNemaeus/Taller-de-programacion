@@ -4,13 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ej07
+namespace ej07.patrón_filter
 {
-    class Program
+    public interface ICriterio
     {
-        static void Main(string[] args)
-        {
-//TODO SACAR CRAP
-        }
+        IList<Evento> cumpleCriterio();
     }
 }

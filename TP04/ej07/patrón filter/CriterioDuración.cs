@@ -4,13 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ej07
+//TODO implementar, documentar, excepciones, testear
+namespace ej07.patrón_filter
 {
-    class Program
+    class CriterioDuración : ICriterio
     {
-        static void Main(string[] args)
-        {
-//TODO SACAR CRAP
-        }
     }
 }
