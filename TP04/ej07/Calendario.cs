@@ -48,6 +48,6 @@ namespace ej07
             iEventos[pNombre] = pEvento;
         }
 
-        public IList<Evento> obtenerEventos() { } //TODO hacer que use los criterios del patrón filter.
+        //public IList<Evento> obtenerEventos() { } //TODO hacer que use los criterios del patrón filter.
     }
 }

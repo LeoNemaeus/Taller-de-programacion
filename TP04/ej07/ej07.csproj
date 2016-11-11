@@ -47,12 +47,19 @@
     <Compile Include="Calendario.cs" />
     <Compile Include="Evento.cs" />
     <Compile Include="Frecuencia.cs" />
+    <Compile Include="patron filter\CrierioOr.cs" />
+    <Compile Include="patron filter\CriterioAnd.cs" />
+    <Compile Include="patron filter\CriterioDuracion.cs" />
+    <Compile Include="patron filter\CriterioFecha.cs" />
+    <Compile Include="patron filter\CriterioNombre.cs" />
+    <Compile Include="patron filter\ICriterio.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

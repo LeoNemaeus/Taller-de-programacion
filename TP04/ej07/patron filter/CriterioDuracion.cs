@@ -15,7 +15,7 @@ namespace ej07.patrón_filter
     {
         private TimeSpan iDuracion;
 
-        CriterioDuracion(TimeSpan pDuracion)
+        public CriterioDuracion(TimeSpan pDuracion)
         {
             this.iDuracion = pDuracion;
         }
