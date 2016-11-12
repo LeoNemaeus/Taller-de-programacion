@@ -15,9 +15,11 @@ namespace ej07.patrón_filter.Tests
         public void cumpleCriterioTest()
         {
             Evento unEvento = new Evento("", new DateTime(2016, 11, 12), TimeSpan.FromHours(1), Frecuencia.Unico);
-            CriterioDuracion Criterio = new CriterioDuracion(TimeSpan.FromHours(1));
+            CriterioDuracion criterioCorrecto = new CriterioDuracion(TimeSpan.FromHours(1));
+            CriterioDuracion criterioIncorrecto = new CriterioDuracion(TimeSpan.FromHours(2));
 
-            Assert.IsTrue(Criterio.cumpleCriterio(unEvento));
+            Assert.IsTrue(criterioCorrecto.cumpleCriterio(unEvento));
+            Assert.IsFalse(criterioIncorrecto.cumpleCriterio(unEvento));
         }
     }
 }

@@ -23,8 +23,8 @@ namespace ej07.patrón_filter
         /// <summary>
         /// Verifica que un evento tenga la duración definida por el filtro.
         /// </summary>
-        /// <param name="pEvento"></param>
-        /// <returns></returns>
+        /// <param name="pEvento">Un Evento</param>
+        /// <returns>Verdadero si cumple el criterio, falso sino</returns>
         public bool cumpleCriterio(Evento pEvento)
         {
             return (pEvento.Duracion == iDuracion);
