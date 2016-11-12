@@ -27,7 +27,7 @@ namespace ej07.patrón_filter
         /// <returns>Verdadero si cumple el criterio, falso sino.</returns>
         public bool cumpleCriterio(Evento pEvento)
         {
-            return (this.iNombre == pEvento.Nombre);
+            return (this.iNombre.ToLower() == pEvento.Nombre.ToLower());
         }
     }
 }

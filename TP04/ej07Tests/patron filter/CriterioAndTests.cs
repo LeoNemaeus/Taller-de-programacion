@@ -9,28 +9,28 @@ using System.Threading.Tasks;
 namespace ej07.patrón_filter.Tests
 {
     [TestClass()]
-    public class CriterioOrTests
+    public class CriterioAndTests
     {
         [TestMethod()]
-        public void CriterioOrTest()
+        public void CriterioAndTest()
         {
             ICriterio unCriterio = new CriterioFecha(new DateTime(2016, 11, 12));
             ICriterio otroCriterio = new CriterioNombre("Asd");
-            ICriterio criterioOr = new CriterioOr(unCriterio, otroCriterio);
+            ICriterio criterioAnd = new CriterioOr(unCriterio, otroCriterio);
 
-            Assert.IsNotNull(criterioOr);
+            Assert.IsNotNull(criterioAnd);
         }
 
         [TestMethod()]
         public void cumpleCriterioTest()
         {
             ICriterio unCriterio = new CriterioFecha(new DateTime(2016, 11, 12));
-            ICriterio otroCriterio = new CriterioNombre("qwer");
-            ICriterio criterioOr = new CriterioOr(unCriterio, otroCriterio);
+            ICriterio otroCriterio = new CriterioNombre("Asd");
+            ICriterio criterioAnd = new CriterioOr(unCriterio, otroCriterio);
 
             Evento unEvento = new Evento("Asd", new DateTime(2016, 11, 12), TimeSpan.FromHours(1), Frecuencia.Unico);
 
-            Assert.IsTrue(criterioOr.cumpleCriterio(unEvento));
+            Assert.IsTrue(criterioAnd.cumpleCriterio(unEvento));
         }
     }
 }

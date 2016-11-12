@@ -15,11 +15,12 @@ namespace ej07.patrón_filter
     public class CriterioFecha : ICriterio
     {
         DateTime iFechaInicio, iFechaFin;
-
+        bool rango = false;
         public CriterioFecha(DateTime pFechaInicio, DateTime pFechaFin)
         {
             this.iFechaInicio = pFechaInicio;
             this.iFechaFin = pFechaFin;
+            this.rango = true;
         }
 
         public CriterioFecha(DateTime pFecha)
@@ -34,7 +35,7 @@ namespace ej07.patrón_filter
         /// <returns></returns>
         public bool cumpleCriterio(Evento pEvento)
         {
-            if (this.iFechaFin != null)
+            if (this.rango)
             {
                 //El Evento comienza después y termina antes del límite inferior del rango
                 return ((this.iFechaInicio.CompareTo(pEvento.Comienzo) <= 0)
