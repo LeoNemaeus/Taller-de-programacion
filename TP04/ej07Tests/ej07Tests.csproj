@@ -54,6 +54,7 @@
     <Compile Include="patron filter\CriterioDuracionTests.cs" />
     <Compile Include="patron filter\CriterioFechaTests.cs" />
     <Compile Include="patron filter\CriterioNombreTests.cs" />
+    <Compile Include="patron filter\CriterioOrTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

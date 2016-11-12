@@ -47,7 +47,7 @@
     <Compile Include="Calendario.cs" />
     <Compile Include="Evento.cs" />
     <Compile Include="Frecuencia.cs" />
-    <Compile Include="patron filter\CrierioOr.cs" />
+    <Compile Include="patron filter\CriterioOr.cs" />
     <Compile Include="patron filter\CriterioAnd.cs" />
     <Compile Include="patron filter\CriterioDuracion.cs" />
     <Compile Include="patron filter\CriterioFecha.cs" />
