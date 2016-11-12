@@ -10,7 +10,7 @@ namespace ej04
     {
         private int iDesplazamiento;
         // alfabeto, se necesita para el algoritmo del encriptador
-        private static string abc = "abcdefghijklmñnopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ1234567890_-+,#$%&/()=¿?¡!|,.;:{}[]";
+        private static string abc = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890_-+,#$%&/()=¿?¡!|,.;:{}[]";
         // metodo interno usado por el encriptador
         private static int getPosABC(char caracter)
         {

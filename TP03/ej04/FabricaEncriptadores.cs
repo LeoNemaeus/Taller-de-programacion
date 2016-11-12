@@ -8,7 +8,7 @@ namespace ej04
 {
     class FabricaEncriptadores
     {
-        private Dictionary<string, IEncriptador> iEncriptadores;
+        private Dictionary<string, IEncriptador> iEncriptadores = new Dictionary<string, IEncriptador>();
 
         private static readonly Lazy<FabricaEncriptadores> cinstancia = new Lazy<FabricaEncriptadores>(() => new FabricaEncriptadores());
 

@@ -16,15 +16,19 @@ namespace ej04
         {
             return FabricaEncriptadores.Instancia;
         }
+        //IEncriptador encriptador
 
-        internal static void Encriptar(string v)
+        public static string Encriptar(string nombreEncriptador, string frase)
         {
-            throw new NotImplementedException();
+            IEncriptador encriptador = FabricaEncriptadores.Instancia.GetEncriptadores(nombreEncriptador);
+            return encriptador.Encriptar(frase);
+            
         }
 
-        internal static void Desencriptar(string v)
+        public static string Desencriptar(string nombreEncriptador, string frase)
         {
-            throw new NotImplementedException();
+            IEncriptador encriptador = FabricaEncriptadores.Instancia.GetEncriptadores(nombreEncriptador);
+            return encriptador.Desencriptar(frase);
         }
     }
 }

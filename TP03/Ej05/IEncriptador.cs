@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Ej05
 {
-    class IEncriptador
+    interface IEncriptador
     {
+        string Encriptar(string pCadena);
+        string Desencriptar(string pCadena);
     }
+
 }
