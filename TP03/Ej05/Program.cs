@@ -44,7 +44,7 @@ namespace Ej05
                                     frase = Console.ReadLine();
                                     Console.Write("\n");
                                     switch (op1)
-                                    {
+                                    {   
                                         case "a":
                                             resultado = Fachada.Encriptar("César", frase);
                                             Console.WriteLine("Resul: " + resultado + "\n-----\n\n");
@@ -75,14 +75,18 @@ namespace Ej05
                                     {
                                         case "a":
                                             resultado = Fachada.Encriptar("AES", frase);
+                                            Console.WriteLine("Resul: " + resultado + "\n-----\n\n");
+
                                             break;
                                         case "b":
                                             resultado = Fachada.Desencriptar("AES", frase);
+                                            Console.WriteLine("Resul: " + resultado + "\n-----\n\n");
                                             break;
                                     }
 
                                 }
-                                Console.WriteLine("Resul: " + resultado + "\n-----\n\n");
+                                //Console.WriteLine("Resul: " + resultado + "\n-----\n\n");
+
                             }
                             break;
                         case "3":
@@ -101,14 +105,15 @@ namespace Ej05
                                     {
                                         case "a":
                                             resultado = Fachada.Encriptar("Inverso", frase);
+                                            Console.WriteLine("Resul: " + resultado + "\n-----\n\n");
                                             break;
                                         case "b":
                                             resultado = Fachada.Desencriptar("Inverso", frase);
+                                            Console.WriteLine("Resul: " + resultado + "\n-----\n\n");
                                             break;
                                     }
 
                                 }
-                                Console.WriteLine("Resul: " + resultado + "\n-----\n\n");
                             }
                             break;
                     }
@@ -116,7 +121,7 @@ namespace Ej05
                 }
             }
             while (opcion != "0");
-            Console.WriteLine("Gracias por usar el programa! :) por favor no vuelva. Nunca. Jamas.");
+            Console.WriteLine("Hasta pronto");
             Console.ReadKey();
         }
     }
