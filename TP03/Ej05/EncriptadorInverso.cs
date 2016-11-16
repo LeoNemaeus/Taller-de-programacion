@@ -21,7 +21,7 @@ namespace Ej05
         }
 
         public override string Desencriptar(string pCadena)
-
+            
         {
             char[] array = pCadena.ToCharArray();
             Array.Reverse(array);

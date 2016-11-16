@@ -7,7 +7,7 @@ namespace ej05Test
 {
     [TestClass()]
     public class TestEncriptadores
-{
+        {
             [TestMethod]
             public void EncriptarDesencriptar()
             {

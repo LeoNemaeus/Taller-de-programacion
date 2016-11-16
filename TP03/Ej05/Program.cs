@@ -17,7 +17,7 @@ namespace Ej05
             string resultado = "";
             string opcion, op1;
             do
-            {   
+            {
                 Console.WriteLine("1) César");
                 Console.WriteLine("2) AES");
                 Console.WriteLine("3) Inverso");
@@ -44,7 +44,7 @@ namespace Ej05
                                     frase = Console.ReadLine();
                                     Console.Write("\n");
                                     switch (op1)
-                                    {   
+                                    {
                                         case "a":
                                             resultado = Fachada.Encriptar("César", frase);
                                             Console.WriteLine("Resul: " + resultado + "\n-----\n\n");
@@ -52,13 +52,13 @@ namespace Ej05
                                         case "b":
                                             resultado = Fachada.Desencriptar("César", frase);
                                             Console.WriteLine("Resul: " + resultado + "\n-----\n\n");
-                                            break;                                      
+                                            break;
                                     }
- 
+
                                 }
-                                
+
                             }
-                        break;
+                            break;
                         case "2":
                             {
                                 Console.WriteLine("-- Bienvenido al algoritmo AES-- ");
@@ -85,7 +85,6 @@ namespace Ej05
                                     }
 
                                 }
-                                //Console.WriteLine("Resul: " + resultado + "\n-----\n\n");
 
                             }
                             break;
@@ -117,7 +116,7 @@ namespace Ej05
                             }
                             break;
                     }
-                    
+
                 }
             }
             while (opcion != "0");
