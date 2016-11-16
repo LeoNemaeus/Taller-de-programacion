@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9428215F-BC1D-4DD6-99CD-1F8568944E08}</ProjectGuid>
+    <ProjectGuid>{95E60F8E-2586-474C-BB18-CAA803C419AC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ej05Test</RootNamespace>
-    <AssemblyName>ej05Test</AssemblyName>
+    <RootNamespace>MatematicaTest</RootNamespace>
+    <AssemblyName>MatematicaTest</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -16,7 +16,6 @@
     <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
     <IsCodedUITest>False</IsCodedUITest>
     <TestProjectType>UnitTest</TestProjectType>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -51,17 +50,13 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="TestEncriptadores.cs" />
+    <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ej04\ej04.csproj">
-      <Project>{4506c296-9eb2-4a00-b81a-a519b96076ed}</Project>
-      <Name>ej04</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Ej05\Ej05.csproj">
-      <Project>{64bad6c6-8e43-45d9-9ee1-2748e4d0fbe2}</Project>
-      <Name>Ej05</Name>
+    <ProjectReference Include="..\ej02\ej02.csproj">
+      <Project>{cd0bf8a5-f3a8-4c95-9f43-0748421e9b11}</Project>
+      <Name>ej02</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>
