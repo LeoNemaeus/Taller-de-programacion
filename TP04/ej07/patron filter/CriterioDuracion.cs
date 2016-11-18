@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 //TODO excepciones, testear
 //DOING implementar, documentar, 
-namespace ej07.patrón_filter
+namespace ej07.patron_filter
 {
     /// <summary>
     /// Permite determinar si un Evento cumple con una duración determinada.

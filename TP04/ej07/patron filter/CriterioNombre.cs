@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 //TODO documentar, excepciones, testear
 //DOING implementar, 
-namespace ej07.patrón_filter
+namespace ej07.patron_filter
 {
     /// <summary>
     /// Permite determinar si un Evento tiene un nombre determinado.

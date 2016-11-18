@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 //TODO comentar Agenda
-//DOING definir métodos de Agenda
+//UNDONE definir métodos de Agenda
 namespace ej07
 {
     class Agenda

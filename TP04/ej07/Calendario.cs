@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ej07.patron_filter;
 
 
 //TODO excepciones, 
@@ -12,7 +13,7 @@ namespace ej07
     /// <summary>
     /// Agrupa un conjunto de Eventos y permite manipularlos.
     /// </summary>
-    class Calendario
+    public class Calendario
     {
         string iNombre;
         DateTime iMomentoCreación;
@@ -48,6 +49,18 @@ namespace ej07
             iEventos[pNombre] = pEvento;
         }
 
-        //public IList<Evento> obtenerEventos() { } //TODO hacer que use los criterios del patrón filter.
+        //TODO hacer que use los criterios del patrón filter.
+        public IList<Evento> obtenerEventos(ICriterio pCriterio)
+        {
+            IList<Evento> mEventos = new List<Evento>();
+
+            foreach (Evento mEvento in iEventos.Values)
+            {
+                if (pCriterio.cumpleCriterio(mEvento))
+                    mEventos.Add(mEvento);
+            }
+
+            return mEventos;
+        }
     }
 }

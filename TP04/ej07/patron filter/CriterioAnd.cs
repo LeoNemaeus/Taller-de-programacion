@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 //TODO excepciones, testear
 //UNDONE implementar,documentar, 
-namespace ej07.patrón_filter
+namespace ej07.patron_filter
 {
     /// <summary>
     /// Criterio compuesto AND. Determina si se cumplen dos criterios dados.

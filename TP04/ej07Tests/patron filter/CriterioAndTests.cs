@@ -1,12 +1,12 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using ej07.patrón_filter;
+using ej07.patron_filter;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ej07.patrón_filter.Tests
+namespace ej07.patron_filter.Tests
 {
     [TestClass()]
     public class CriterioAndTests

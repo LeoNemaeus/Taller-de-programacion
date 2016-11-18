@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 //TODO documentar
-namespace ej07.patrón_filter
+namespace ej07.patron_filter
 {
     public interface ICriterio
     {
