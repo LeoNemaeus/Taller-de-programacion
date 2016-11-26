@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ej04
 {
-    class EncriptadorNulo : Encriptador
+    public class EncriptadorNulo : Encriptador
     {
         public EncriptadorNulo() : base("Nulo") { }
 

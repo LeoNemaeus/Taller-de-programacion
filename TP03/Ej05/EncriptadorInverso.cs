@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ej04;
 
 namespace Ej05
 {
@@ -20,7 +21,7 @@ namespace Ej05
         }
 
         public override string Desencriptar(string pCadena)
-
+            
         {
             char[] array = pCadena.ToCharArray();
             Array.Reverse(array);

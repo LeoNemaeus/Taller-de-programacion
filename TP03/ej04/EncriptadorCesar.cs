@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ej04
 {
-    class EncriptadorCesar : Encriptador
+    public class EncriptadorCesar : Encriptador
     {
         private int iDesplazamiento;
         // alfabeto, se necesita para el algoritmo del encriptador

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace ej04
 {
     // implementa IEncriptador
-    abstract class Encriptador : IEncriptador
+    public class Encriptador : IEncriptador
     {
         private string iNombre;
 

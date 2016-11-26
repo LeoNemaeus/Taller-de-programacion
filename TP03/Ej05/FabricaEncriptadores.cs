@@ -7,20 +7,39 @@ using ej04;
 
 namespace Ej05
 {
-    class FabricaEncriptadores
+    public class FabricaEncriptadores
     {
-        //TERMINAR DE COMPLETAR LA CLASE TOMANDO COMO PARÁMETROS LOS CÓDIGOS DEL EJERCIO 4.
-        private static FabricaEncriptadores cInstancia;
-        private IDictionary<String, IEncriptador> iEncriptadores;
-        private EncriptadorNulo Nulo = new EncriptadorNulo();
+        private Dictionary<string, IEncriptador> iEncriptadores = new Dictionary<string, IEncriptador>();
 
-        private FabricaEncriptadores() { }
+        private static readonly Lazy<FabricaEncriptadores> cinstancia = new Lazy<FabricaEncriptadores>(() => new FabricaEncriptadores());
+
+        private readonly EncriptadorNulo iEncriptadorNulo = new EncriptadorNulo();
+
+        private FabricaEncriptadores()
+        {
+
+
+            foreach (Encriptador encriptador in new Encriptador[] { new EncriptadorCesar(3), new EncriptadorAES() })
+            {
+                this.iEncriptadores.Add(encriptador.Nombre, encriptador);
+            }
+        }
 
         public static FabricaEncriptadores Instancia
         {
             get { return cinstancia.Value; }
         }
 
+        public IEncriptador GetEncriptadores(string nombre)
+        {
+            IEncriptador encriptador = this.iEncriptadorNulo;
 
+            if (this.iEncriptadores.ContainsKey(nombre)) 
+            {
+                encriptador = this.iEncriptadores[nombre];
+            }
+
+            return encriptador;
+        }
     }
 }
