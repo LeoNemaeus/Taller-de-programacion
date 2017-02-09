@@ -25,7 +25,7 @@ namespace TestEj05
             Usuario nuevoUsuario = new Usuario() 
                 { Codigo = "1", NombreCompleto = "Juan", CorreoElectronico = "Juan1@gmail.com" };
             Usuario nuevoUsuario2 = new Usuario() 
-                { Codigo = "2", NombreCompleto = "German", CorreoElectronico = "Juan1@gmail.com" };
+                { Codigo = "2", NombreCompleto = "Juega German", CorreoElectronico = "Juan1@gmail.com" };
             Usuario nuevoUsuario3 = new Usuario() 
                 { Codigo = "3", NombreCompleto = "Jennifer", CorreoElectronico = "Juan1@gmail.com" };
 
