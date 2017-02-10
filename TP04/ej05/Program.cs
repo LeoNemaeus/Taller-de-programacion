@@ -10,7 +10,6 @@ namespace ej05
     {
         static void Main(string[] args)
         {
-            IRepositorioUsuarios.ObtenerOrdenadosPor
         }
     }
 }
